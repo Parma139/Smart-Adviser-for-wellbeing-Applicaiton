@@ -1,56 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Notes"
-        android:id="@+id/Notes"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        />
+    <ImageButton
+        android:id="@+id/homeButton"
+        android:layout_width="77dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginBottom="16dp"
+        android:adjustViewBounds="true"
+        android:background="#00FFFFFF"
+        android:contentDescription="homebutton"
+        android:onClick="homeButton"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home"
+        tools:ignore="OnClick" />
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="Anxiety"
-            android:id="@+id/Anxiety"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            />
+    <ImageButton
+        android:id="@+id/anxietyButton"
+        android:layout_width="77dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginBottom="16dp"
+        android:adjustViewBounds="true"
+        android:background="#FFFFFF"
+        android:onClick="anxietyButton"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/noteButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sad"
+        tools:ignore="OnClick" />
 
-        <Button
-            android:id="@+id/TimeManagement"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="0dp"
-            android:layout_marginBottom="10dp"
-            android:text="TimeManagement" />
+    <ImageButton
+        android:id="@+id/timemanagementButon"
+        android:layout_width="77dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginBottom="16dp"
+        android:adjustViewBounds="true"
+        android:background="#FFFFFF"
+        android:onClick="timemanagementButon"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/anxietyButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/time"
+        tools:ignore="OnClick" />
 
-        <Button
-            android:id="@+id/General"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="529dp"
-            android:layout_marginBottom="10dp"
-            android:text="General" />
+    <ImageButton
+        android:id="@+id/noteButton"
+        android:layout_width="77dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginBottom="16dp"
+        android:adjustViewBounds="true"
+        android:background="#FFFFFF"
+        android:onClick="noteButton"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/homeButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/notes"
+        tools:ignore="OnClick" />
 
 
-
-    </RelativeLayout>
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
