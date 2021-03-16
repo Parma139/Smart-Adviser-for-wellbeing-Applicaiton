@@ -10,7 +10,11 @@
     <FrameLayout
         android:id="@+id/fragmentscreen_layout"
         android:layout_width="match_parent"
-        android:layout_height="637dp">
+        android:layout_height="637dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
 
     </FrameLayout>
 
