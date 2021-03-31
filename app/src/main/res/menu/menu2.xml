@@ -18,5 +18,10 @@
         android:id="@+id/item4"
         android:title="TimeManagement"
         android:icon="@drawable/time"/>
+    <item
+        android:id="@+id/item5"
+        android:title="Log"/>
+<!--        android:icon="@drawable/time"/>-->
+
 
 </menu>

@@ -3,19 +3,14 @@ package com.example.smart_adviser_for_wellbeing;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
                     selectedFragment = new TimeMnangement();
                     break;
 
+                case R.id.item5:
+                    selectedFragment = new Log();
+                    break;
+
             }
 
             //Begin transisiton
@@ -70,4 +69,8 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
+
+//    public void setHappyButton(ImageButton happyButton) {
+//
+//    }
 }
