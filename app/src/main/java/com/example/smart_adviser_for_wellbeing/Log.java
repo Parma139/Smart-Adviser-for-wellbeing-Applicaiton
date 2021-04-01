@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.Checkable;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -17,7 +19,9 @@ import android.widget.TextView;
  */
 public class Log extends Fragment {
 
-
+    int countQnum = 0;
+    int userScore;
+    int userScoreAdd;
 
     public Log() {
         // Required empty public constructor
@@ -38,6 +42,16 @@ public class Log extends Fragment {
         //button varable
 
         Button nextButton1 = v.findViewById(R.id.nextButton);
+
+        //checkbox button variable
+
+        CheckBox checkOpt1 = v.findViewById(R.id.checkBox1);
+        CheckBox checkOpt2 = v.findViewById(R.id.checkBox2);
+        CheckBox checkOpt3 = v.findViewById(R.id.checkBox3);
+        CheckBox checkOpt4 = v.findViewById(R.id.checkBox4);
+
+
+
 
         //Image button function
         happyButton.setOnClickListener(new View.OnClickListener(){
@@ -64,9 +78,10 @@ public class Log extends Fragment {
             @Override
             public void onClick(View v){
 
-                int q1 = 1;
-               // q1++;
-                setQues(q1);
+
+                countQnum++;                                                 // increment question number
+                setQues(countQnum);
+                userScore = userScore + userScoreAdd;
 
                 nextButton = (View) getView().findViewById(R.id.nextButton);
                 nextButton.setVisibility(View.INVISIBLE);
@@ -84,12 +99,170 @@ public class Log extends Fragment {
                 checkBox4 = (View) getView().findViewById(R.id.checkBox4);
                 checkBox4.setVisibility(View.VISIBLE);
 
+                if (countQnum == 11){
+
+                    allQuOpt();
+                    finalBoxOutput = (View) getView().findViewById(R.id.finalbox);
+                    finalBoxOutput.setVisibility(View.VISIBLE);
+                }
+
+            //    unCheckbox();
+
+                if (checkOpt1.isChecked()){
+
+                    checkOpt1.setChecked(false);
+                }
+
+                if (checkOpt2.isChecked()){
+
+                    checkOpt2.setChecked(false);
+                }
+
+                if (checkOpt3.isChecked()){
+
+                    checkOpt3.setChecked(false);
+                }
+
+                if (checkOpt4.isChecked()){
+
+                    checkOpt4.setChecked(false);
+                }
 
 
             }
 
         });
 
+        //checkbox button function
+        checkOpt1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+
+                int Score1 = 0;
+                userScoreAdd = Score1;
+                nextButton = (View) getView().findViewById(R.id.nextButton);
+                nextButton.setVisibility(View.VISIBLE);
+                //q1++;
+
+                if (checkOpt2.isChecked()){
+
+                    checkOpt2.setChecked(false);
+                }
+
+                if (checkOpt3.isChecked()){
+
+                    checkOpt3.setChecked(false);
+                }
+
+                if (checkOpt4.isChecked()){
+
+                    checkOpt4.setChecked(false);
+                }
+
+
+
+
+            }
+
+
+        });
+
+
+        checkOpt2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+
+                int Score2 = 1;
+                userScoreAdd = Score2;
+                nextButton = (View) getView().findViewById(R.id.nextButton);
+                nextButton.setVisibility(View.VISIBLE);
+                //q1++;
+
+                if (checkOpt1.isChecked()){
+
+                    checkOpt1.setChecked(false);
+                }
+
+                if (checkOpt3.isChecked()){
+
+                    checkOpt3.setChecked(false);
+                }
+
+                if (checkOpt4.isChecked()){
+
+                    checkOpt4.setChecked(false);
+                }
+
+
+            }
+
+
+        });
+
+        checkOpt3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+
+                int Score3 = 2;
+                userScoreAdd = Score3;
+
+                nextButton = (View) getView().findViewById(R.id.nextButton);
+                nextButton.setVisibility(View.VISIBLE);
+                //q1++;
+
+                if (checkOpt2.isChecked()){
+
+                    checkOpt2.setChecked(false);
+                }
+
+                if (checkOpt1.isChecked()){
+
+                    checkOpt1.setChecked(false);
+                }
+
+                if (checkOpt4.isChecked()){
+
+                    checkOpt4.setChecked(false);
+                }
+
+
+            }
+
+
+        });
+
+        checkOpt4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+
+
+                int Score4 = 3;
+                userScoreAdd = Score4;
+
+                nextButton = (View) getView().findViewById(R.id.nextButton);
+                nextButton.setVisibility(View.VISIBLE);
+                //q1++;
+
+                if (checkOpt2.isChecked()){
+
+                    checkOpt2.setChecked(false);
+                }
+
+                if (checkOpt3.isChecked()){
+
+                    checkOpt3.setChecked(false);
+                }
+
+                if (checkOpt1.isChecked()){
+
+                    checkOpt1.setChecked(false);
+                }
+
+
+            }
+
+
+        });
 
         return v;
 
@@ -105,15 +278,16 @@ public class Log extends Fragment {
     View checkBox3;
     View checkBox4;
     View quesBox;
+    View finalBoxOutput;
 
 
     // setques
-    public void setQues(int q){
+    public void setQues(int quesNum){
 
         TextView questionOutput;
         questionOutput = getView().findViewById(R.id.quesBox);
 
-        switch (q){
+        switch (quesNum){
             case 1:
                 questionOutput.setText("how are you I am in q1");
                 break;
@@ -148,5 +322,29 @@ public class Log extends Fragment {
         }
     }
 
-   // public void hide
+
+    public void allQuOpt(){
+
+
+        quesBox = (View) getView().findViewById(R.id.quesBox);
+        quesBox.setVisibility(View.INVISIBLE);
+        checkBox1 = (View) getView().findViewById(R.id.checkBox1);
+        checkBox1.setVisibility(View.INVISIBLE);
+        checkBox2 = (View) getView().findViewById(R.id.checkBox2);
+        checkBox2.setVisibility(View.INVISIBLE);
+        checkBox3 = (View) getView().findViewById(R.id.checkBox3);
+        checkBox3.setVisibility(View.INVISIBLE);
+        checkBox4 = (View) getView().findViewById(R.id.checkBox4);
+        checkBox4.setVisibility(View.INVISIBLE);
+
+        TextView finalBoxoutput;
+        finalBoxoutput = getView().findViewById(R.id.finalbox);
+        finalBoxoutput.setText("I am done " + "\n CountQuestnumber: " + countQnum + "\n userscore: " + userScore);
+
+
+    }
+
+
+
+
 }
