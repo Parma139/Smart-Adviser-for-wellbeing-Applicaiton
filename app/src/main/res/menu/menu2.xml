@@ -12,16 +12,28 @@
         android:icon="@drawable/notes"/>
     <item
         android:id="@+id/item3"
-        android:title="Anxiety"
+        android:title="Reading"
         android:icon="@drawable/sad"/>
+
     <item
         android:id="@+id/item4"
-        android:title="TimeManagement"
-        android:icon="@drawable/time"/>
-    <item
-        android:id="@+id/item5"
-        android:title="Log"/>
+        android:title="About"
+        android:icon="@android:drawable/ic_menu_info_details"/>
+
+
+<!--    <item-->
+<!--        android:id="@+id/item5"-->
+<!--        android:title="Log"/>-->
 <!--        android:icon="@drawable/time"/>-->
+
+
+<!--    <item-->
+<!--        android:id="@+id/item6"-->
+<!--        android:title="Reading"/>-->
+<!--    &lt;!&ndash;        android:icon="@drawable/time"/>&ndash;&gt;-->
+
+
+
 
 
 </menu>

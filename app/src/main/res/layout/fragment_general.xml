@@ -10,20 +10,24 @@
 
     <TextView
         android:id="@+id/homeIcon"
-        android:layout_width="160dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="125dp"
-        android:layout_marginLeft="125dp"
-        android:text="    Home"
-        android:textSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="#2196F3"
+        android:text="                  Home"
+        android:textColor="#FFFFFF"
+        android:textSize="35dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="417dp"
-        android:layout_height="176dp"
-        android:layout_marginTop="54dp"
+        android:layout_width="388dp"
+        android:layout_height="163dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="80dp"
         android:src="@android:drawable/editbox_dropdown_dark_frame"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/homeIcon" />
@@ -32,9 +36,9 @@
         android:id="@+id/btnHru"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="94dp"
-        android:layout_marginLeft="94dp"
-        android:layout_marginTop="57dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="60dp"
         android:text="How are you feeling today"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -43,122 +47,13 @@
         android:id="@+id/btnHuseapp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="122dp"
-        android:layout_marginLeft="122dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
 
-        android:layout_marginTop="21dp"
-        android:text="How to use the app"
+        android:layout_marginTop="44dp"
+        android:text="View Report"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnHru" />
 
-    <Button
-        android:id="@+id/btnAboutapp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="155dp"
-        android:layout_marginLeft="155dp"
-        android:layout_marginTop="24dp"
-        android:text="About app"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnHuseapp" />
-
-    <Button
-        android:id="@+id/happybtn"
-        android:layout_width="135dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginLeft="29dp"
-        android:layout_marginTop="12dp"
-        android:text="HAPPY"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/sadbtn"
-        android:layout_width="135dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:text="SAD"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/Anxiety"
-        android:layout_width="147dp"
-        android:layout_height="99dp"
-        android:visibility="invisible"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-
-        android:layout_marginTop="44dp"
-        android:text="Anxiety"
-        app:layout_constraintStart_toStartOf="@+id/TimeManagement"
-        app:layout_constraintTop_toBottomOf="@+id/homeIcon" />
-
-    <Button
-        android:id="@+id/TimeManagement"
-        android:layout_width="171dp"
-        android:layout_height="99dp"
-        android:visibility="invisible"
-        android:layout_marginTop="60dp"
-        android:text="TimeManagement"
-        app:layout_constraintEnd_toEndOf="@+id/btnHuseapp"
-        app:layout_constraintTop_toBottomOf="@+id/Anxiety" />
-
-    <Button
-        android:id="@+id/None"
-        android:layout_width="147dp"
-        android:layout_height="99dp"
-        android:layout_marginTop="48dp"
-        android:visibility="invisible"
-        android:layout_marginEnd="132dp"
-        android:layout_marginRight="132dp"
-        android:text="NoneofThese"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/happybtn" />
-
-    <Button
-        android:id="@+id/Wantoread"
-        android:layout_width="333dp"
-        android:layout_height="99dp"
-        android:visibility="invisible"
-        android:text="Want to read ?"
-        app:layout_constraintStart_toStartOf="@+id/happybtn"
-        app:layout_constraintTop_toBottomOf="@+id/homeIcon" />
-
-    <Button
-        android:id="@+id/YesOpt"
-        android:layout_width="138dp"
-        android:layout_height="91dp"
-        android:text="YES"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@+id/happybtn"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/NoOpt"
-        android:layout_width="138dp"
-        android:layout_height="91dp"
-        android:visibility="invisible"
-        android:text="NO"
-        app:layout_constraintEnd_toEndOf="@+id/sadbtn"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/yesoptAn"
-        android:layout_width="138dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="180dp"
-        android:layout_marginEnd="7dp"
-        android:visibility="invisible"
-        android:layout_marginRight="7dp"
-        android:text="YES"
-        app:layout_constraintEnd_toEndOf="@+id/YesOpt"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

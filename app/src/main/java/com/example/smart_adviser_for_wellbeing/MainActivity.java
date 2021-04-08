@@ -3,8 +3,10 @@ package com.example.smart_adviser_for_wellbeing;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 
@@ -40,22 +42,19 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()){
                 case R.id.item1:
                     selectedFragment = new General();
-                    break;
+                     break;
                 case R.id.item2:
                     selectedFragment = new Notes();
                     break;
 
                 case R.id.item3:
-                    selectedFragment = new Anxiety();
+                    selectedFragment = new Reading();
                     break;
 
                 case R.id.item4:
-                    selectedFragment = new TimeMnangement();
+                    selectedFragment = new AboutApp();
                     break;
 
-                case R.id.item5:
-                    selectedFragment = new Log();
-                    break;
 
             }
 
@@ -69,8 +68,4 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
-//
-//    public void setHappyButton(ImageButton happyButton) {
-//
-//    }
 }

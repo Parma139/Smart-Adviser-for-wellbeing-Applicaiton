@@ -3,6 +3,7 @@ package com.example.smart_adviser_for_wellbeing;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Checkable;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -19,9 +21,11 @@ import android.widget.TextView;
  */
 public class Log extends Fragment {
 
-    int countQnum = 0;
-    int userScore;
-    int userScoreAdd;
+    private int countQnum = 0;
+    private int userScore;
+    private int userScoreAdd;
+    private String Mood;
+    private String userMood;
 
     public Log() {
         // Required empty public constructor
@@ -38,10 +42,14 @@ public class Log extends Fragment {
         // return inflater.inflate(R.layout.fragment_log, container, false);
         //Image button variable
         ImageButton happyButton = v.findViewById(R.id.happyEButton);
+        ImageButton anxiousButton = v.findViewById(R.id.anxiousBtn);
+        ImageButton sadButton = v.findViewById(R.id.sademojibtn);
 
         //button varable
 
         Button nextButton1 = v.findViewById(R.id.nextButton);
+        Button closeBtnlog = v.findViewById(R.id.closeBtnlog);
+        Button feelingbtn = v.findViewById(R.id.feelingbtn);
 
         //checkbox button variable
 
@@ -66,13 +74,114 @@ public class Log extends Fragment {
                 firstMessageBox.setVisibility(View.VISIBLE);
                 nextButton = (View) getView().findViewById(R.id.nextButton);
                 nextButton.setVisibility(View.VISIBLE);
+                feelingenterbtn = (View) getView().findViewById(R.id.feelingbtn);
+                feelingenterbtn.setVisibility(View.INVISIBLE);
+                feelingbox = (View) getView().findViewById(R.id.userfeelingInputbox);
+                feelingbox.setVisibility(View.INVISIBLE);
+                sadBtn = (View) getView().findViewById(R.id.sademojibtn);
+                sadBtn.setVisibility(View.INVISIBLE);
+                anxiousBtn = (View) getView().findViewById(R.id.anxiousBtn);
+                anxiousBtn.setVisibility(View.INVISIBLE);
+                String currentMood = "Happy";
+                Mood = currentMood;
+
 
             }
 
 
         });
 
+        anxiousButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+
+                feelingQbox = (View) getView().findViewById(R.id.feelingQbox);
+                feelingQbox.setVisibility(View.INVISIBLE);
+                happyEmoji = (View) getView().findViewById(R.id.happyEButton);
+                happyEmoji.setVisibility(View.INVISIBLE);
+                feelingenterbtn = (View) getView().findViewById(R.id.feelingbtn);
+                feelingenterbtn.setVisibility(View.INVISIBLE);
+                feelingbox = (View) getView().findViewById(R.id.userfeelingInputbox);
+                feelingbox.setVisibility(View.INVISIBLE);
+                sadBtn = (View) getView().findViewById(R.id.sademojibtn);
+                sadBtn.setVisibility(View.INVISIBLE);
+                anxiousBtn = (View) getView().findViewById(R.id.anxiousBtn);
+                anxiousBtn.setVisibility(View.INVISIBLE);
+                firstMessageBox = (View) getView().findViewById(R.id.Messagebox);
+                firstMessageBox.setVisibility(View.VISIBLE);
+                nextButton = (View) getView().findViewById(R.id.nextButton);
+                nextButton.setVisibility(View.VISIBLE);
+                String currentMood = "Anxious";
+                Mood = currentMood;
+
+
+            }
+
+
+        });
+
+        sadButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+
+                feelingQbox = (View) getView().findViewById(R.id.feelingQbox);
+                feelingQbox.setVisibility(View.INVISIBLE);
+                happyEmoji = (View) getView().findViewById(R.id.happyEButton);
+                happyEmoji.setVisibility(View.INVISIBLE);
+                anxiousBtn = (View) getView().findViewById(R.id.anxiousBtn);
+                anxiousBtn.setVisibility(View.INVISIBLE);
+                feelingenterbtn = (View) getView().findViewById(R.id.feelingbtn);
+                feelingenterbtn.setVisibility(View.INVISIBLE);
+                feelingbox = (View) getView().findViewById(R.id.userfeelingInputbox);
+                feelingbox.setVisibility(View.INVISIBLE);
+                sadBtn = (View) getView().findViewById(R.id.sademojibtn);
+                sadBtn.setVisibility(View.INVISIBLE);
+                firstMessageBox = (View) getView().findViewById(R.id.Messagebox);
+                firstMessageBox.setVisibility(View.VISIBLE);
+                nextButton = (View) getView().findViewById(R.id.nextButton);
+                nextButton.setVisibility(View.VISIBLE);
+                userMood = "Sad";
+                Mood = userMood;
+
+
+            }
+
+
+        });
+
+
+
         //button function
+
+        feelingbtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+                EditText userfeelingInput = (EditText) getView().findViewById(R.id.userfeelingInputbox);
+
+                feelingQbox = (View) getView().findViewById(R.id.feelingQbox);
+                feelingQbox.setVisibility(View.INVISIBLE);
+                happyEmoji = (View) getView().findViewById(R.id.happyEButton);
+                happyEmoji.setVisibility(View.INVISIBLE);
+                anxiousBtn = (View) getView().findViewById(R.id.anxiousBtn);
+                anxiousBtn.setVisibility(View.INVISIBLE);
+                sadBtn = (View) getView().findViewById(R.id.sademojibtn);
+                sadBtn.setVisibility(View.INVISIBLE);
+                feelingenterbtn = (View) getView().findViewById(R.id.feelingbtn);
+                feelingenterbtn.setVisibility(View.INVISIBLE);
+                feelingbox = (View) getView().findViewById(R.id.userfeelingInputbox);
+                feelingbox.setVisibility(View.INVISIBLE);
+                firstMessageBox = (View) getView().findViewById(R.id.Messagebox);
+                firstMessageBox.setVisibility(View.VISIBLE);
+                nextButton = (View) getView().findViewById(R.id.nextButton);
+                nextButton.setVisibility(View.VISIBLE);
+
+                userMood = userfeelingInput.getText().toString();
+                Mood = userMood;
+
+            }
+
+        });
 
         nextButton1.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -104,7 +213,30 @@ public class Log extends Fragment {
                     allQuOpt();
                     finalBoxOutput = (View) getView().findViewById(R.id.finalbox);
                     finalBoxOutput.setVisibility(View.VISIBLE);
+                    closebtnlog = (View) getView().findViewById(R.id.closeBtnlog);
+                    closebtnlog.setVisibility(View.VISIBLE);
                 }
+
+                //close button
+
+                closeBtnlog.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+
+                        closebtnlog = (View) getView().findViewById(R.id.closeBtnlog);
+                        closebtnlog.setVisibility(View.INVISIBLE);
+                        finalBoxOutput = (View) getView().findViewById(R.id.finalbox);
+                        finalBoxOutput.setVisibility(View.INVISIBLE);
+                        General GeneralFragment = new General();
+                        FragmentTransaction trans = getFragmentManager().beginTransaction();
+                        trans.replace(R.id.fragmentscreen_layout, GeneralFragment );
+                        trans.commit();
+
+                       // getSupportFragmentManager().beginTransaction().replace(R.id.fragmentscreen_layout, new General());
+
+                    }
+
+                });
 
             //    unCheckbox();
 
@@ -236,7 +368,7 @@ public class Log extends Fragment {
             public void onClick(View view){
 
 
-                int Score4 = 3;
+                int Score4 = 4;
                 userScoreAdd = Score4;
 
                 nextButton = (View) getView().findViewById(R.id.nextButton);
@@ -279,6 +411,12 @@ public class Log extends Fragment {
     View checkBox4;
     View quesBox;
     View finalBoxOutput;
+    View closebtnlog;
+    View happyBtn;
+    View anxiousBtn;
+    View sadBtn;
+    View feelingenterbtn;
+    View feelingbox;
 
 
     // setques
@@ -289,34 +427,34 @@ public class Log extends Fragment {
 
         switch (quesNum){
             case 1:
-                questionOutput.setText("how are you I am in q1");
+                questionOutput.setText("Question 1");
                 break;
             case 2:
-                questionOutput.setText("how are you I am in q2");
+                questionOutput.setText("Question 2");
                 break;
             case 3:
-                questionOutput.setText("how are you I am in q3");
+                questionOutput.setText("Question 3");
                 break;
             case 4:
-                questionOutput.setText("how are you I am in q4");
+                questionOutput.setText("Question 4");
                 break;
             case 5:
-                questionOutput.setText("how are you I am in q5");
+                questionOutput.setText("Question 5");
                 break;
             case 6:
-                questionOutput.setText("how are you I am in q6");
+                questionOutput.setText("Question 6");
                 break;
             case 7:
-                questionOutput.setText("how are you I am in q7");
+                questionOutput.setText("Question 7");
                 break;
             case 8:
-                questionOutput.setText("how are you I am in q8");
+                questionOutput.setText("Question 8");
                 break;
             case 9:
-                questionOutput.setText("how are you I am in q9");
+                questionOutput.setText("Question 9");
                 break;
             case 10:
-                questionOutput.setText("how are you I am in q10");
+                questionOutput.setText("Question 10");
                 break;
 
         }
@@ -337,14 +475,120 @@ public class Log extends Fragment {
         checkBox4 = (View) getView().findViewById(R.id.checkBox4);
         checkBox4.setVisibility(View.INVISIBLE);
 
-        TextView finalBoxoutput;
-        finalBoxoutput = getView().findViewById(R.id.finalbox);
-        finalBoxoutput.setText("I am done " + "\n CountQuestnumber: " + countQnum + "\n userscore: " + userScore);
-
+        if (Mood.equals("Happy")) {
+            happyResult(userScore);
+        }
+        if (Mood.equals("Anxious") || Mood.equals("Sad")){
+            anxiousResult(userScore);
+        }
+        if (Mood.equals(userMood)){
+            sadResult(userScore);
+        }
 
     }
 
 
+    /** fucntion for happymood
+     *
+     */
 
+
+    TextView finalBoxoutput;
+
+    public void happyResult(int Score) {
+
+        // 0 means positive and 40 means negative
+        finalBoxoutput = getView().findViewById(R.id.finalbox);
+
+            if (Score >= 0 & Score <= 10 ) {
+
+              finalBoxoutput.setText("You got: " + userScore + "/40 \nYeah! you feeling " + Mood);
+
+            }
+
+            if (Score >= 10 & Score <= 20 ) {
+
+            finalBoxoutput.setText("You got: " + userScore + "/40 \nYou are feeling " + Mood + " might be little bit you are unhappy");
+
+            }
+
+            if (Score >= 20 & Score <=30) {
+
+            finalBoxoutput.setText("You got: " + userScore + "/40 \nChances are less that you are feeling " + Mood);
+
+            }
+
+            if (Score >= 30 & Score <=40) {
+
+            finalBoxoutput.setText("You got: " + userScore + "/40 \nChances are very less that you feeling " + Mood);
+
+            }
+    }
+
+    /** fucntion for anxiousMood
+     *
+     */
+
+    public void anxiousResult(int Score) {
+
+        finalBoxoutput = getView().findViewById(R.id.finalbox);
+
+
+        if (Score >= 0 & Score <= 10 ) {
+
+            finalBoxoutput.setText("You got: " + userScore + "/40 \nChances are very less that you feeling " + Mood);
+
+        }
+
+        if (Score >= 10 & Score <= 20 ) {
+
+            finalBoxoutput.setText("You got: " + userScore + "/40 \nChances are less that you feeling " + Mood );
+
+        }
+
+        if (Score >= 20 & Score <=30) {
+
+            finalBoxoutput.setText("You got: " + userScore + "/40 \nChances are higher that you are feeling " + Mood);
+
+        }
+
+        if (Score >= 30 & Score <=40) {
+
+            finalBoxoutput.setText("You got: " + userScore + "/40 \nChances are very higher that you are feeling " + Mood);
+
+        }
+
+    }
+
+    public void sadResult(int Score) {
+
+        finalBoxoutput = getView().findViewById(R.id.finalbox);
+
+
+        if (Score >= 0 & Score <= 10 ) {
+
+            finalBoxoutput.setText("You got: " + userScore + "/40 \n Chances are very less that you feeling " + Mood);
+
+        }
+
+        if (Score >= 10 & Score <= 20 ) {
+
+            finalBoxoutput.setText("You got: " + userScore + "/40 \n Chances are less that you feeling " + Mood );
+
+        }
+
+        if (Score >= 20 & Score <=30) {
+
+            finalBoxoutput.setText("You got: " + userScore + "/40 \n Chances are higher that you are feeling " + Mood);
+
+        }
+
+        if (Score >= 30 & Score <=40) {
+
+            finalBoxoutput.setText("You got: " + userScore + "/40 \n Chances are very higher that you are feeling " + Mood);
+
+        }
+
+    }
 
 }

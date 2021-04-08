@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Reading">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?actionBarSize"
+        android:theme="?actionBarTheme"
+        android:background="#2196F3">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reading"
+            android:textSize="35sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Click any of these button given below for more information. Happy Reading"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="#5A5151"
+        android:text="Anxiety"
+        android:textColor="#3F51B5"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorLink="#2196F3"
+        android:textCursorDrawable="@drawable/img1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:backgroundTint="#7EC2E33F" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:text="TimeManagement"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:backgroundTint="#7EC2E33F" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:text="Sad"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:backgroundTint="#7EC2E33F" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:text="Stress"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:backgroundTint="#7EC2E33F" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:text="Concenteration"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:backgroundTint="#7EC2E33F" />
+
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:text="Click Here for More"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:backgroundTint="#7EC2E33F" />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+

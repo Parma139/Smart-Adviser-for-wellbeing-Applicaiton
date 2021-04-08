@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--    app:layout_behavior="@"-->
+    tools:context=".Notes">
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?actionBarSize"
+        android:theme="?actionBarTheme"
+        android:background="#2196F3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:textSize="35sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+
+</LinearLayout>
