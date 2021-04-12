@@ -21,19 +21,6 @@
         android:icon="@android:drawable/ic_menu_info_details"/>
 
 
-<!--    <item-->
-<!--        android:id="@+id/item5"-->
-<!--        android:title="Log"/>-->
-<!--        android:icon="@drawable/time"/>-->
-
-
-<!--    <item-->
-<!--        android:id="@+id/item6"-->
-<!--        android:title="Reading"/>-->
-<!--    &lt;!&ndash;        android:icon="@drawable/time"/>&ndash;&gt;-->
-
-
-
 
 
 </menu>

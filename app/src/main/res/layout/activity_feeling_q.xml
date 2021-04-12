@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0081D4FA"
+    tools:context=".FeelingQ">
+
+    <TextView
+        android:id="@+id/quesBox"
+        android:layout_width="398dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="16dp"
+        android:background="#0000BCD4"
+        android:text="TextView"
+        android:textColor="#121111"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/feelingQbox"
+        android:layout_width="339dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="80dp"
+        android:background="#00C6BFBF"
+        android:fontFamily="sans-serif-black"
+        android:text="Select your feeling"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/quesBox" />
+
+    <ImageButton
+        android:id="@+id/happyEButton"
+        android:layout_width="82dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginLeft="164dp"
+        android:layout_marginTop="156dp"
+        android:adjustViewBounds="true"
+        android:background="#00FFFFFF"
+        android:contentDescription="happybtn"
+        android:onClick="happybtn"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quesBox" />
+
+    <ImageButton
+        android:id="@+id/anxiousBtn"
+        android:layout_width="79dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginRight="164dp"
+        android:adjustViewBounds="true"
+        android:background="#00FFFFFF"
+        android:onClick="anxiousbtn"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/anxious"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quesBox" />
+
+    <ImageButton
+        android:id="@+id/sademojibtn"
+        android:layout_width="86dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="156dp"
+        android:adjustViewBounds="true"
+        android:background="#00FFFFFF"
+        android:onClick="sadbtn"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/sademoji"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quesBox" />
+
+    <TextView
+        android:id="@+id/Messagebox"
+        android:layout_width="359dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="172dp"
+        android:fontFamily="sans-serif-black"
+        android:text="How you felt in last 48 hours"
+        android:textColor="#A9292626"
+        android:textSize="36sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quesBox" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="398dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="ques1btn"
+        android:text="Not at all"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quesBox" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="398dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="ques2btn"
+        android:text="Few Hours"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/checkBox1" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="398dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="ques3btn"
+        android:text="Most of the hours"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/checkBox1" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="398dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="368dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="ques4btn"
+        android:text="Everyhours"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/quesBox" />
+
+    <TextView
+        android:id="@+id/finalbox"
+        android:layout_width="337dp"
+        android:layout_height="181dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="116dp"
+        android:text="TextView"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/checkBox1"
+        app:layout_constraintTop_toBottomOf="@+id/quesBox" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="196dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginRight="112dp"
+        android:onClick="nextBtn"
+        android:text="Next"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+
+    <Button
+        android:id="@+id/closeBtnlog"
+        android:layout_width="199dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginRight="108dp"
+        android:onClick="closeBtn"
+        android:text="Close"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+
+    <EditText
+        android:id="@+id/userfeelingInputbox"
+        android:layout_width="362dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="380dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="wrtie here if you are feeling something else"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quesBox" />
+
+    <Button
+        android:id="@+id/feelingbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="452dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:background="#312B2828"
+        android:onClick="feelingbtn"
+        android:text="Click here"
+        android:textColor="#171616"
+        app:backgroundTint="#2C120505"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quesBox" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

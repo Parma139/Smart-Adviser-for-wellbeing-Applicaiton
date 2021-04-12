@@ -1,5 +1,6 @@
 package com.example.smart_adviser_for_wellbeing;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -21,8 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
  */
 public class General extends Fragment {
 
-    Button fratime;
-    Button fraAn;
+
 
     public General() {
 
@@ -34,78 +34,25 @@ public class General extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-       View v = inflater.inflate(R.layout.fragment_general, container, false);
-    //main code//    return inflater.inflate(R.layout.fragment_general, container, false);
-
-
+       View view = inflater.inflate(R.layout.fragment_general, container, false);
+       //    return inflater.inflate(R.layout.fragment_general, container, false);
 
      //********vriable for button
-        Button btn = v.findViewById(R.id.btnHru);
+        Button btn = view.findViewById(R.id.btnHru);
 
-
-
-
-    //********btn for how are you feeling today
         btn.setOnClickListener(new View.OnClickListener(){
-           @Override
+            @Override
             public void onClick(View v){
-
-               hide();
-//             navigationbutton = (View) getView().findViewById(R.id.bottomNavigationview);
-//             navigationbutton.setVisibility(View.INVISIBLE);
-               Log LogFragemnt = new Log();
-               FragmentTransaction trans = getFragmentManager().beginTransaction();
-               trans.replace(R.id.main, LogFragemnt);
-               trans.commit();
+                Intent newNoteIntent = new Intent(view.getContext(), FeelingQ.class);
+                startActivity(newNoteIntent);
             }
 
         });
 
-        return v;
+        return view;
 
     }
 
-    //******hide function  for after clicki how are you feeling today
-    View logo;
-    View btn1;
-    View btn2;
-    View btn3;
-    View hicon;
-    View navigationbutton;
-
-
-    public void hide() {
-
-        hicon = (View) getView().findViewById(R.id.homeIcon);
-        hicon.setVisibility(View.INVISIBLE);
-        logo = (View) getView().findViewById(R.id.imageView);
-        logo.setVisibility(View.INVISIBLE);
-        btn1 = (View) getView().findViewById(R.id.btnHru);
-        btn1.setVisibility(View.INVISIBLE);
-        btn2 = (View) getView().findViewById(R.id.btnHuseapp);
-        btn2.setVisibility(View.INVISIBLE);
-
-
-
-    }
-
-    //############hide function  for after clicki how are you feeling today
-
-    //****** showMainBtn funtionc  for after clicki feelinghappy
-    public void showMainBtn(){
-
-        hicon = (View) getView().findViewById(R.id.homeIcon);
-        hicon.setVisibility(View.VISIBLE);
-        logo = (View) getView().findViewById(R.id.imageView);
-        logo.setVisibility(View.VISIBLE);
-        btn1 = (View) getView().findViewById(R.id.btnHru);
-        btn1.setVisibility(View.VISIBLE);
-        btn2 = (View) getView().findViewById(R.id.btnHuseapp);
-        btn2.setVisibility(View.VISIBLE);
-
-
-
-    }
 
 
 }
