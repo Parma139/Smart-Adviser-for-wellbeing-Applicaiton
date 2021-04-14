@@ -12,14 +12,14 @@
         android:layout_height="wrap_content"
         android:minHeight="?actionBarSize"
         android:theme="?actionBarTheme"
-        android:background="@color/purple_200">
+        android:background="#C1333135">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="DETAIL"
             android:textSize="35sp"
-            android:textColor="@color/white"
+            android:textColor="#EFEBEB"
             android:textStyle="bold"
             android:layout_gravity="center"/>
 
@@ -28,12 +28,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="#B436C544"
             android:onClick="saveNote"
             android:text="SAVE"
-            android:textColor="@color/purple_200"
-            android:textSize="35sp"
+            android:textColor="@color/black"
+            android:textSize="22sp"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/deleteNoteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DELETE"
+            android:backgroundTint="#DDEF2020"
+
+            android:layout_gravity="start"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:onClick="deleteNote"/>
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -41,78 +54,77 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="How are you feeling today"
-        android:textSize="25sp"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:textColor="@color/purple_200"
-        android:textStyle="bold"
-        android:layout_gravity="center"/>
+        android:text="You selected that you are feeling"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/feelingtoday"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:maxLines="1"
-        android:textColor="@color/purple_200"
-        android:layout_gravity="center"/>
-
-
+        android:maxLines="2"
+        android:textColor="#09AEED"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="What you did good today?"
-        android:textSize="25sp"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:textColor="@color/purple_200"
-        android:textStyle="bold"
-        android:layout_gravity="center"/>
+        android:text="Write more about your feeling"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/goodtoday"
         android:layout_width="302dp"
         android:layout_height="78dp"
+        android:inputType="textMultiLine"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:minLines="3"
-        android:textColor="@color/purple_200"
+        android:textColor="#09AEED"
         android:textSize="25sp" />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Summary"
-        android:textSize="25sp"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:textColor="@color/purple_200"
-        android:textStyle="bold"
-        android:layout_gravity="center"/>
+        android:text="What you did good today?"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/indetail"
         android:layout_width="302dp"
         android:layout_height="78dp"
         android:layout_gravity="center"
+        android:inputType="textMultiLine"
         android:layout_marginTop="20dp"
         android:minLines="3"
-        android:textColor="@color/purple_200"
+        android:textColor="#09AEED"
         android:textSize="25sp" />
 
+
+
     <Button
-        android:id="@+id/deleteNoteButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/closebtnNDA"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DELETE"
-        android:textSize="25sp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/purple_700"
-        android:textStyle="bold"
-        android:layout_gravity="center"
+        android:text="Close"
         android:layout_marginTop="20dp"
-        android:onClick="deleteNote"/>
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

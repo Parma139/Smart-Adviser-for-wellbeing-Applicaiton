@@ -56,5 +56,4 @@ public class Notes extends Fragment {
     }
 
 
-
   }

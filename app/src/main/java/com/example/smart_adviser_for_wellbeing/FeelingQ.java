@@ -1,9 +1,12 @@
 package com.example.smart_adviser_for_wellbeing;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -19,12 +22,26 @@ public class FeelingQ extends AppCompatActivity {
     private int userScoreAdd;
     public String Mood;
     public String userMood;
+    private static String moodforNpage = "Click on how you feeling today in HomePage";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feeling_q);
+
+        Button closebtnfeelingQ = findViewById(R.id.closeBtnlog);
+
+        closebtnfeelingQ.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+                finish();
+            }
+
+        });
     }
 
 
@@ -55,6 +72,7 @@ public class FeelingQ extends AppCompatActivity {
 
         String currentMood = "Happy";
         Mood = currentMood;
+        moodforNpage = currentMood;
 
 
     }
@@ -84,6 +102,7 @@ public class FeelingQ extends AppCompatActivity {
 
         String currentMood = "Anxious";
         Mood = currentMood;
+        moodforNpage = currentMood;
 
     }
 
@@ -112,6 +131,7 @@ public class FeelingQ extends AppCompatActivity {
 
         userMood = "Sad";
         Mood = userMood;
+        moodforNpage = userMood;
 
     }
 
@@ -141,6 +161,10 @@ public class FeelingQ extends AppCompatActivity {
 
             userMood = userfeelingInput.getText().toString();
             Mood = userMood;
+
+        moodforNpage=userfeelingInput.getText().toString().trim();
+
+
 
     }
 
@@ -177,23 +201,12 @@ public class FeelingQ extends AppCompatActivity {
                 finalBoxOutput = findViewById(R.id.finalbox);
                 finalBoxOutput.setVisibility(View.VISIBLE);
                 uncheckallbox();
-//                closebtnlog = findViewById(R.id.closeBtnlog);
-//                closebtnlog.setVisibility(View.VISIBLE);
+                closebtnlog = findViewById(R.id.closeBtnlog);
+                closebtnlog.setVisibility(View.VISIBLE);
             }
 
     }
 
-
-//    public void closeBtn(View v) {
-//
-//        closebtnlog = findViewById(R.id.closeBtnlog);
-//        closebtnlog.setVisibility(View.INVISIBLE);
-//        finalBoxOutput = findViewById(R.id.finalbox);
-//        finalBoxOutput.setVisibility(View.INVISIBLE);
-//
-//        uncheckallbox();
-//
-//    }
 
     //checkbox button function
 
@@ -532,5 +545,10 @@ public class FeelingQ extends AppCompatActivity {
 
     }
 
+
+
+    public static String getmood() {
+        return moodforNpage;
+    }
 
 }
