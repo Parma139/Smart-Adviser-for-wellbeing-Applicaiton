@@ -5,4 +5,92 @@
     <string name="Notes">Notes</string>
     <string name="Button0">notes</string>
     <string name="notes">note</string>
+
+    <string name="content">
+        <b>Anxiety</b> is a type of fear usually associated with the thought of a threat or something going wrong in the future, but can also arise from something happening right now.  Anxiety is what we feel when we are worried, tense or afraid – particularly about things that are about to happen, or which we think could happen in the future.
+
+        \n\n
+        Anxiety is a natural human response when we feel that we are under threat. It can be experienced through our thoughts, feelings and physical sensations.
+        \n\n
+        For more information -> <a href="https://www.anxietyuk.org.uk/get-help/about-anxiety-and-anxiety-disorders/"> <b>Click here</b></a>
+
+        <!--        https://www.mind.org.uk/information-support/types-of-mental-health-problems/anxiety-and-panic-attacks/about-anxiety/-->
+
+    </string>
+
+
+    <string name="depressionRContent">
+        Depression is a low mood that lasts for a long time, and affects your everyday life.
+        \n\n
+        In its mildest form, depression can mean just being in low spirits. It does not stop you leading your normal life but makes everything harder to do and seem less worthwhile. At its most severe, depression can be life-threatening because it can make you feel suicidal.
+        \n\n
+        For more information -> <a href="https://www.mind.org.uk/information-support/types-of-mental-health-problems/depression/about-depression/"> <b>Click here</b></a>
+
+    </string>
+
+
+    <string name="angryRContent">
+    We all feel angry at times – it is part of being human. Anger is a normal, healthy emotion, which we might experience if we feel:
+    \n\n
+        - attacked
+    \n\n
+        - deceived
+    \n\n
+        - frustrated
+    \n\n
+        - invalidated or unfairly treated
+    \n\n
+    For more information -> <a href="https://www.mind.org.uk/information-support/types-of-mental-health-problems/anger/about-anger/"> <b>Click here</b></a>
+
+
+        <!--        We all feel angry at times – it is part of being human. Anger is a normal, healthy emotion, which we might experience if we feel:-->
+        <!--    \n\n-->
+        <!--        - attacked-->
+        <!--    \n\n-->
+        <!--        - deceived-->
+        <!--    \n\n-->
+        <!--        - frustrated-->
+        <!--    \n\n-->
+        <!--        - invalidated or unfairly treated-->
+
+    </string>
+
+
+    <string name="stressRContent">
+
+    We all know what it is like to feel stressed, but it is not easy to pin down exactly what stress means. When we say things like "this is stressful" or "I'm stressed", we might be talking about:
+    \n\n
+    <b>- Situations or events that put pressure on us – </b>for example, times where we have lots to do and think about, or do not have much control over what happens.
+    \n\n
+    <b>- Our reaction to being placed under pressure – </b>the feelings we get when we have demands placed on us that we find difficult to cope with.
+
+     \n\n
+    For more information -> <a href="https://www.mind.org.uk/information-support/types-of-mental-health-problems/stress/what-is-stress/"> <b>Click here</b></a>
+
+    </string>
+
+
+    <string name="readingLinkContent">
+
+        1. <a href="https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/low-mood-sadness-depression/"> <b>Low mood, sadneess and depression</b></a>
+        \n\n
+        2. <a href="https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/anxiety-fear-panic/"> <b>Anxiety, Fear and Panic</b></a>
+        \n\n
+        3.<a href="https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/stress/"> <b>Stress</b></a>
+        \n\n
+        4.<a href="https://www.nhs.uk/mental-health/advice-for-life-situations-and-events/how-to-cope-with-financial-worries/"> <b>Coping with financial worries</b></a>
+         \n\n
+        5.<a href="https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder/overview/"> <b>Overview-generalized anxiety disorder in adults</b></a>
+         \n\n
+        6.<a href="https://www.samaritans.org/"> <b>Samaritans</b></a>
+        \n\n
+        7.<a href="https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/depression-anxiety-self-assessment-quiz/"> <b>Living life to the full: free online courses covering low mood, stress and resiliency</b></a>
+        \n\n
+        8.<a href="https://www.mind.org.uk/information-support/types-of-mental-health-problems/"> <b>Types of mental health problemsy</b></a>
+
+
+
+
+    </string>
+
 </resources>

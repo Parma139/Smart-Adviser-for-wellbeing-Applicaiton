@@ -9,15 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartAdviserforWellbeing">
-        <activity android:name=".ReadingContentPage"></activity>
-        <activity android:name=".FeelingQ" />
-        <activity android:name=".NoteDetailActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".WelcomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".ReadingLinkCP" />
+        <activity android:name=".ReadingStressCP" />
+        <activity android:name=".ReadingAngryCP" />
+        <activity android:name=".ReadingDepressionCP" />
+        <activity android:name=".ReadingContentPage" />
+        <activity android:name=".FeelingQ" />
+        <activity android:name=".NoteDetailActivity" />
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 

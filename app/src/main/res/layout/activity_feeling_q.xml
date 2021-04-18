@@ -24,13 +24,14 @@
 
     <TextView
         android:id="@+id/feelingQbox"
-        android:layout_width="339dp"
-        android:layout_height="101dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="80dp"
         android:background="#00C6BFBF"
         android:fontFamily="sans-serif-black"
+        android:gravity="center"
         android:text="Select your feeling"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"

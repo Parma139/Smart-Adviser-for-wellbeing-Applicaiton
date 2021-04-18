@@ -8,17 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-public class ReadingContentPage extends AppCompatActivity {
+public class ReadingDepressionCP extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reading_content_page);
+        setContentView(R.layout.activity_reading_depression_c_p);
 
 
-        TextView connectLink = findViewById(R.id.ReadingContentAnxiety);
+        TextView connectLink = findViewById(R.id.ReadingContentDepression);
         connectLink.setMovementMethod(LinkMovementMethod.getInstance());
 
         Button closeReadpage = findViewById(R.id.closeReadPage);
@@ -30,7 +28,5 @@ public class ReadingContentPage extends AppCompatActivity {
             }
 
         });
-
     }
-
 }

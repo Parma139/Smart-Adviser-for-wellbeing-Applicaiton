@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReadingContentPage">
-
+    tools:context=".ReadingAngryCP">
 
     <TextView
         android:id="@+id/TitleforReading"
@@ -13,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="ANXIETY"
+        android:text="ANGER"
         android:textSize="24sp" />
 
     <ScrollView
@@ -22,13 +21,13 @@
         android:layout_below="@id/TitleforReading"
         android:layout_marginTop="25dp"
         >
-    <TextView
-        android:id="@+id/ReadingContentAnxiety"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/content"
-        android:textSize="24sp" />
+        <TextView
+            android:id="@+id/ReadingContentAngry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/angryRContent"
+            android:textSize="24sp" />
 
     </ScrollView>
 
@@ -41,3 +40,4 @@
 
 
 </RelativeLayout>
+
