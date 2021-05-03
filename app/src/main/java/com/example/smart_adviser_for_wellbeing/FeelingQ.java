@@ -176,6 +176,7 @@ public class FeelingQ extends AppCompatActivity {
         countQnum++;                                                 // increment question number
         setQues(countQnum);
 
+
             userScore = userScore + userScoreAdd;
             nextButton = findViewById(R.id.nextButton);
             nextButton.setVisibility(View.INVISIBLE);
@@ -194,12 +195,18 @@ public class FeelingQ extends AppCompatActivity {
             checkBox4.setVisibility(View.VISIBLE);
 
             uncheckallbox();
+            questionNoBoxV = findViewById(R.id.questionNo);
+            questionNoBoxV.setVisibility(View.VISIBLE);
+            questionNobox = findViewById(R.id.questionNo);
+            questionNobox.setText("Question no: " + countQnum  + " / " + 16 );
 
-            if (countQnum == 11) {
+            if (countQnum == 17) {
 
                 allQuOpt();
                 finalBoxOutput = findViewById(R.id.finalbox);
                 finalBoxOutput.setVisibility(View.VISIBLE);
+                questionNoBoxV = findViewById(R.id.questionNo);
+                questionNoBoxV.setVisibility(View.INVISIBLE);
                 uncheckallbox();
                 closebtnlog = findViewById(R.id.closeBtnlog);
                 closebtnlog.setVisibility(View.VISIBLE);
@@ -304,7 +311,7 @@ public class FeelingQ extends AppCompatActivity {
 
     public void ques4btn(View v){
 
-        int Score4 = 4;
+        int Score4 = 3;
         userScoreAdd = Score4;
 
         CheckBox checkOpt1 = findViewById(R.id.checkBox1);
@@ -348,6 +355,7 @@ public class FeelingQ extends AppCompatActivity {
        View sadBtn;
        View feelingenterbtn;
        View feelingbox;
+       View questionNoBoxV;
 
     // setques
     public void setQues(int quesNum){
@@ -357,35 +365,53 @@ public class FeelingQ extends AppCompatActivity {
 
        switch (quesNum){
             case 1:
-                questionOutput.setText("Question 1");
+                questionOutput.setText("Do you find it hard to stop thinking about what happened?");
                 break;
             case 2:
-                questionOutput.setText("Question 2");
+                questionOutput.setText("Do you feel tense, nervous or unable to relax?");
                 break;
             case 3:
-                questionOutput.setText("Question 3");
+                questionOutput.setText("Do you quickly get irritated?");
                 break;
             case 4:
-                questionOutput.setText("Question 4");
+                questionOutput.setText("Do you feel resentful towards other people or situations?");
                 break;
             case 5:
-                questionOutput.setText("Question 5");
+                questionOutput.setText("Do you find difficulties in concentration?");
                 break;
             case 6:
-                questionOutput.setText("Question 6");
+                questionOutput.setText("Are you struggling to make a decision?");
                 break;
             case 7:
-                questionOutput.setText("Question 7");
+                questionOutput.setText("Are you constantly worrying?");
                 break;
             case 8:
-                questionOutput.setText("Question 8");
+                questionOutput.setText("Are you feeling unemotional?");
                 break;
             case 9:
-                questionOutput.setText("Question 9");
+                questionOutput.setText("Are you feeling low and losing pleasure in things that were once enjoyable?");
                 break;
             case 10:
-                questionOutput.setText("Question 10");
+                questionOutput.setText("Are you feeling down, depressed or hopeless?");
                 break;
+           case 11:
+               questionOutput.setText("Are you Trouble falling asleep, staying asleep, or sleeping too much?");
+               break;
+           case 12:
+               questionOutput.setText("Do you get thoughts of being better off dead or of hurting yourself in some way?");
+               break;
+           case 13:
+               questionOutput.setText("Are you feeling nervous, anxious or on edge?");
+               break;
+           case 14:
+               questionOutput.setText("Are you not being able to stop or control worrying?");
+               break;
+           case 15:
+               questionOutput.setText("Are you worrying too much about different things?");
+               break;
+           case 16:
+               questionOutput.setText("Are you feeling afraid as if something awful might happen?");
+               break;
        }
     }
 
@@ -417,10 +443,12 @@ public class FeelingQ extends AppCompatActivity {
 
 
     TextView finalBoxoutput;
+    TextView questionNobox;
+
 
     public void happyResult(int Score) {
 
-        // 0 means positive and 40 means negative
+        // 0 means positive and 48 means negative
         finalBoxoutput = findViewById(R.id.finalbox);
 
 

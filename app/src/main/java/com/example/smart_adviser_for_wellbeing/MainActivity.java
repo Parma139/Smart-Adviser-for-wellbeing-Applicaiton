@@ -18,21 +18,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // btnnav start
+
 
         BottomNavigationView btnNav = findViewById(R.id.bottomNavigationview);
         btnNav.setOnNavigationItemSelectedListener(navListener);
 
-        // Setting Home Fragment as main Fragment
-         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentscreen_layout, new General()).commit();
+        // Setting home as a main fragment
 
-        // end betnav
+         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentscreen_layout, new Home()).commit();
 
     }
 
-
-
-    // nav start
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -41,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
             switch (item.getItemId()){
                 case R.id.item1:
-                    selectedFragment = new General();
+                    selectedFragment = new Home();
                      break;
                 case R.id.item2:
                     selectedFragment = new Notes();
@@ -61,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
             //Begin transisiton
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentscreen_layout, selectedFragment).addToBackStack(null).commit();
             return true;
-
 
 
         }

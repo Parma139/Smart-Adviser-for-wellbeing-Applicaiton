@@ -19,8 +19,4 @@
         android:id="@+id/item4"
         android:title="About"
         android:icon="@android:drawable/ic_menu_info_details"/>
-
-
-
-
 </menu>

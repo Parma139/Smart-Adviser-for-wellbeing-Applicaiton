@@ -9,11 +9,11 @@
 
     <TextView
         android:id="@+id/quesBox"
-        android:layout_width="398dp"
-        android:layout_height="72dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="52dp"
         android:background="#0000BCD4"
         android:text="TextView"
         android:textColor="#121111"
@@ -26,16 +26,16 @@
         android:id="@+id/feelingQbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="#00C6BFBF"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="Select your feeling"
         android:textSize="36sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/quesBox" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/happyEButton"
@@ -147,7 +147,7 @@
         android:id="@+id/checkBox4"
         android:layout_width="398dp"
         android:layout_height="72dp"
-        android:layout_marginTop="368dp"
+        android:layout_marginTop="296dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:onClick="ques4btn"
@@ -155,7 +155,7 @@
         android:textSize="24sp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/quesBox" />
+        app:layout_constraintTop_toBottomOf="@+id/quesBox" />
 
     <TextView
         android:id="@+id/finalbox"
@@ -173,30 +173,29 @@
 
     <Button
         android:id="@+id/nextButton"
-        android:layout_width="196dp"
-        android:layout_height="99dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
+        android:layout_width="197dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginRight="116dp"
         android:onClick="nextBtn"
         android:text="Next"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+        app:layout_constraintTop_toBottomOf="@+id/feelingQbox" />
 
     <Button
         android:id="@+id/closeBtnlog"
         android:layout_width="199dp"
         android:layout_height="101dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="364dp"
         android:layout_marginEnd="108dp"
         android:layout_marginRight="108dp"
-        android:onClick="closeBtn"
         android:text="Close"
         android:textSize="18sp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+        app:layout_constraintTop_toBottomOf="@+id/feelingQbox" />
 
     <EditText
         android:id="@+id/userfeelingInputbox"
@@ -225,6 +224,21 @@
         app:backgroundTint="#2C120505"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quesBox" />
+
+    <TextView
+        android:id="@+id/questionNo"
+        android:layout_width="409dp"
+        android:layout_height="41dp"
+        android:fontFamily="sans-serif-black"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="TextView"
+        android:visibility="invisible"
+        android:textColor="#0B0A0A"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
