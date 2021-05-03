@@ -25,9 +25,8 @@ public class Reading extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_reading, container, false);
 
+        View view = inflater.inflate(R.layout.fragment_reading, container, false);
 
         Button readinganxietyPageBtn = view.findViewById(R.id.anxietyReadBtn);
         readinganxietyPageBtn.setOnClickListener(new View.OnClickListener(){

@@ -20,9 +20,13 @@ public class FeelingQ extends AppCompatActivity {
     private int countQnum = 0;
     private int userScore;
     private int userScoreAdd;
+    private int anxietyScore;
+    private int angerScore;
+    private int stressScore;
+    private int depressionScore;
     public String Mood;
     public String userMood;
-    private static String moodforNpage = "Click on how you feeling today in HomePage";
+    private static String moodforNpage = "N/A";
 
 
 
@@ -53,52 +57,17 @@ public class FeelingQ extends AppCompatActivity {
 
     public void happybtn(View v){
 
-        feelingQbox = findViewById(R.id.feelingQbox);
-        feelingQbox.setVisibility(View.INVISIBLE);
-        happyEmoji = findViewById(R.id.happyEButton);
-        happyEmoji.setVisibility(View.INVISIBLE);
-        firstMessageBox = findViewById(R.id.Messagebox);
-        firstMessageBox.setVisibility(View.VISIBLE);
-        nextButton = findViewById(R.id.nextButton);
-        nextButton.setVisibility(View.VISIBLE);
-        feelingenterbtn = findViewById(R.id.feelingbtn);
-        feelingenterbtn.setVisibility(View.INVISIBLE);
-        feelingbox = findViewById(R.id.userfeelingInputbox);
-        feelingbox.setVisibility(View.INVISIBLE);
-        sadBtn = findViewById(R.id.sademojibtn);
-        sadBtn.setVisibility(View.INVISIBLE);
-        anxiousBtn =findViewById(R.id.anxiousBtn);
-        anxiousBtn.setVisibility(View.INVISIBLE);
+        visibilityforSelectFeeling();
 
         String currentMood = "Happy";
         Mood = currentMood;
         moodforNpage = currentMood;
 
-
     }
-
-
-
-
 
     public void anxiousbtn(View v){
 
-        feelingQbox = findViewById(R.id.feelingQbox);
-        feelingQbox.setVisibility(View.INVISIBLE);
-        happyEmoji = findViewById(R.id.happyEButton);
-        happyEmoji.setVisibility(View.INVISIBLE);
-        feelingenterbtn = findViewById(R.id.feelingbtn);
-        feelingenterbtn.setVisibility(View.INVISIBLE);
-        feelingbox =findViewById(R.id.userfeelingInputbox);
-        feelingbox.setVisibility(View.INVISIBLE);
-        sadBtn = findViewById(R.id.sademojibtn);
-        sadBtn.setVisibility(View.INVISIBLE);
-        anxiousBtn = findViewById(R.id.anxiousBtn);
-        anxiousBtn.setVisibility(View.INVISIBLE);
-        firstMessageBox =findViewById(R.id.Messagebox);
-        firstMessageBox.setVisibility(View.VISIBLE);
-        nextButton = findViewById(R.id.nextButton);
-        nextButton.setVisibility(View.VISIBLE);
+        visibilityforSelectFeeling();
 
         String currentMood = "Anxious";
         Mood = currentMood;
@@ -106,28 +75,9 @@ public class FeelingQ extends AppCompatActivity {
 
     }
 
-
-
-
-
     public void sadbtn(View v){
 
-        feelingQbox = findViewById(R.id.feelingQbox);
-        feelingQbox.setVisibility(View.INVISIBLE);
-        happyEmoji = findViewById(R.id.happyEButton);
-        happyEmoji.setVisibility(View.INVISIBLE);
-        anxiousBtn = findViewById(R.id.anxiousBtn);
-        anxiousBtn.setVisibility(View.INVISIBLE);
-        feelingenterbtn = findViewById(R.id.feelingbtn);
-        feelingenterbtn.setVisibility(View.INVISIBLE);
-        feelingbox = findViewById(R.id.userfeelingInputbox);
-        feelingbox.setVisibility(View.INVISIBLE);
-        sadBtn = findViewById(R.id.sademojibtn);
-        sadBtn.setVisibility(View.INVISIBLE);
-        firstMessageBox = findViewById(R.id.Messagebox);
-        firstMessageBox.setVisibility(View.VISIBLE);
-        nextButton = findViewById(R.id.nextButton);
-        nextButton.setVisibility(View.VISIBLE);
+        visibilityforSelectFeeling();
 
         userMood = "Sad";
         Mood = userMood;
@@ -135,36 +85,14 @@ public class FeelingQ extends AppCompatActivity {
 
     }
 
-
-
-
     public void feelingbtn(View v){
 
         EditText userfeelingInput = findViewById(R.id.userfeelingInputbox);
+        visibilityforSelectFeeling();
 
-            feelingQbox = findViewById(R.id.feelingQbox);
-            feelingQbox.setVisibility(View.INVISIBLE);
-            happyEmoji =findViewById(R.id.happyEButton);
-            happyEmoji.setVisibility(View.INVISIBLE);
-            anxiousBtn = findViewById(R.id.anxiousBtn);
-            anxiousBtn.setVisibility(View.INVISIBLE);
-            sadBtn = findViewById(R.id.sademojibtn);
-            sadBtn.setVisibility(View.INVISIBLE);
-            feelingenterbtn =findViewById(R.id.feelingbtn);
-            feelingenterbtn.setVisibility(View.INVISIBLE);
-            feelingbox =findViewById(R.id.userfeelingInputbox);
-            feelingbox.setVisibility(View.INVISIBLE);
-            firstMessageBox = findViewById(R.id.Messagebox);
-            firstMessageBox.setVisibility(View.VISIBLE);
-            nextButton = findViewById(R.id.nextButton);
-            nextButton.setVisibility(View.VISIBLE);
-
-            userMood = userfeelingInput.getText().toString();
-            Mood = userMood;
-
+        userMood = userfeelingInput.getText().toString();
+        Mood = userMood;
         moodforNpage=userfeelingInput.getText().toString().trim();
-
-
 
     }
 
@@ -178,6 +106,9 @@ public class FeelingQ extends AppCompatActivity {
 
 
             userScore = userScore + userScoreAdd;
+
+            scoreForall();
+
             nextButton = findViewById(R.id.nextButton);
             nextButton.setVisibility(View.INVISIBLE);
             nextButton = findViewById(R.id.Messagebox);
@@ -213,6 +144,8 @@ public class FeelingQ extends AppCompatActivity {
             }
 
     }
+
+
 
 
     //checkbox button function
@@ -452,27 +385,27 @@ public class FeelingQ extends AppCompatActivity {
         finalBoxoutput = findViewById(R.id.finalbox);
 
 
-        if (Score >= 0 & Score <= 10 ) {
+        if (Score >= 0 & Score <= 12 ) {
 
-            finalBoxoutput.setText("You got: " + userScore + "/40 \nYeah! you feeling " + Mood);
-
-        }
-
-        if (Score >= 10 & Score <= 20 ) {
-
-            finalBoxoutput.setText("You got: " + userScore + "/40 \nYou are feeling " + Mood + " might be little bit you are unhappy");
+            finalBoxoutput.setText("\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepressoion Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nYeah! you feeling " + Mood);
 
         }
 
-        if (Score >= 20 & Score <=30) {
+        if (Score >= 10 & Score <= 24 ) {
 
-            finalBoxoutput.setText("You got: " + userScore + "/40 \nChances are less that you are feeling " + Mood);
+            finalBoxoutput.setText("\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepressoion Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nYou are feeling " + Mood + "might be little bit you are unhappy");
 
         }
 
-        if (Score >= 30 & Score <=40) {
+        if (Score >= 20 & Score <=36) {
 
-            finalBoxoutput.setText("You got: " + userScore + "/40 \nChances are very less that you feeling " + Mood);
+            finalBoxoutput.setText("\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepressoion Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nChances are less that you are feeling " + Mood);
+
+        }
+
+        if (Score >= 30 & Score <=48) {
+
+            finalBoxoutput.setText("\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepressoion Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nChances are very less that you feeling " + Mood);
 
         }
     }
@@ -483,27 +416,27 @@ public class FeelingQ extends AppCompatActivity {
         finalBoxoutput = findViewById(R.id.finalbox);
 
 
-        if (Score >= 0 & Score <= 10 ) {
+        if (Score >= 0 & Score <= 12 ) {
 
-            finalBoxoutput.setText("You got: " + userScore + "/40 \nChances are very less that you feeling " + Mood);
-
-        }
-
-        if (Score >= 10 & Score <= 20 ) {
-
-            finalBoxoutput.setText("You got: " + userScore + "/40 \nChances are less that you feeling " + Mood );
+            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepressoion Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nChances are very less that you feeling " + Mood);
 
         }
 
-        if (Score >= 20 & Score <=30) {
+        if (Score >= 10 & Score <= 24 ) {
 
-            finalBoxoutput.setText("You got: " + userScore + "/40 \nChances are higher that you are feeling " + Mood);
+            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepressoion Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nChances are less that you feeling " + Mood );
 
         }
 
-        if (Score >= 30 & Score <=40) {
+        if (Score >= 20 & Score <=36) {
 
-            finalBoxoutput.setText("You got: " + userScore + "/40 \nChances are very higher that you are feeling " + Mood);
+            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepressoion Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nChances are higher that you are feeling " + Mood);
+
+        }
+
+        if (Score >= 30 & Score <=48) {
+
+            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepressoion Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nChances are very higher that you are feeling " + Mood);
 
         }
 
@@ -515,27 +448,27 @@ public class FeelingQ extends AppCompatActivity {
         finalBoxoutput = findViewById(R.id.finalbox);
 
 
-        if (Score >= 0 & Score <= 10 ) {
+        if (Score >= 0 & Score <= 12 ) {
 
-            finalBoxoutput.setText("You got: " + userScore + "/40 \n Chances are very less that you feeling " + Mood);
-
-        }
-
-        if (Score >= 10 & Score <= 20 ) {
-
-            finalBoxoutput.setText("You got: " + userScore + "/40 \n Chances are less that you feeling " + Mood );
+            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepressoion Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \n Chances are very less that you feeling " + Mood);
 
         }
 
-        if (Score >= 20 & Score <=30) {
+        if (Score >= 10 & Score <= 24 ) {
 
-            finalBoxoutput.setText("You got: " + userScore + "/40 \n Chances are higher that you are feeling " + Mood);
+            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepressoion Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \n Chances are less that you feeling " + Mood );
 
         }
 
-        if (Score >= 30 & Score <=40) {
+        if (Score >= 20 & Score <=36) {
 
-            finalBoxoutput.setText("You got: " + userScore + "/40 \n Chances are very higher that you are feeling " + Mood);
+            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepressoion Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \n Chances are higher that you are feeling " + Mood);
+
+        }
+
+        if (Score >= 30 & Score <=48) {
+
+            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepressoion Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \n Chances are very higher that you are feeling " + Mood);
 
         }
 
@@ -574,6 +507,53 @@ public class FeelingQ extends AppCompatActivity {
     }
 
 
+    void visibilityforSelectFeeling(){
+
+        feelingQbox = findViewById(R.id.feelingQbox);
+        feelingQbox.setVisibility(View.INVISIBLE);
+        happyEmoji = findViewById(R.id.happyEButton);
+        happyEmoji.setVisibility(View.INVISIBLE);
+        firstMessageBox = findViewById(R.id.Messagebox);
+        firstMessageBox.setVisibility(View.VISIBLE);
+        nextButton = findViewById(R.id.nextButton);
+        nextButton.setVisibility(View.VISIBLE);
+        feelingenterbtn = findViewById(R.id.feelingbtn);
+        feelingenterbtn.setVisibility(View.INVISIBLE);
+        feelingbox = findViewById(R.id.userfeelingInputbox);
+        feelingbox.setVisibility(View.INVISIBLE);
+        sadBtn = findViewById(R.id.sademojibtn);
+        sadBtn.setVisibility(View.INVISIBLE);
+        anxiousBtn =findViewById(R.id.anxiousBtn);
+        anxiousBtn.setVisibility(View.INVISIBLE);
+    }
+
+    private void scoreForall() {
+
+        if (countQnum <=5){
+
+            angerScore = angerScore+userScoreAdd;
+
+        }
+        else if(countQnum >= 6 && countQnum <=9){
+
+            stressScore = stressScore + userScoreAdd;
+
+        }
+
+        else if(countQnum >= 9 && countQnum <= 13){
+
+            depressionScore = depressionScore + userScoreAdd;
+
+        }
+
+        else if(countQnum >= 12 && countQnum <= 17){
+
+            anxietyScore = anxietyScore + userScoreAdd;
+
+        }
+
+
+    }
 
     public static String getmood() {
         return moodforNpage;
