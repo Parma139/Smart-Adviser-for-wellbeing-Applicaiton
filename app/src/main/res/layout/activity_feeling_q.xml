@@ -37,54 +37,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/happyEButton"
-        android:layout_width="82dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginLeft="164dp"
-        android:layout_marginTop="156dp"
-        android:adjustViewBounds="true"
-        android:background="#00FFFFFF"
-        android:contentDescription="happybtn"
-        android:onClick="happybtn"
-        android:padding="0dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/img1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quesBox" />
 
-    <ImageButton
-        android:id="@+id/anxiousBtn"
-        android:layout_width="79dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="228dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginRight="164dp"
-        android:adjustViewBounds="true"
-        android:background="#00FFFFFF"
-        android:onClick="anxiousbtn"
-        android:padding="0dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/anxious"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quesBox" />
-
-    <ImageButton
-        android:id="@+id/sademojibtn"
-        android:layout_width="86dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="156dp"
-        android:adjustViewBounds="true"
-        android:background="#00FFFFFF"
-        android:onClick="sadbtn"
-        android:padding="0dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/sademoji"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quesBox" />
+    <!--    <ImageButton-->
+    <!--        android:id="@+id/sademojibtn"-->
+    <!--        android:layout_width="86dp"-->
+    <!--        android:layout_height="65dp"-->
+    <!--        android:layout_marginStart="76dp"-->
+    <!--        android:layout_marginLeft="76dp"-->
+    <!--        android:layout_marginTop="156dp"-->
+    <!--        android:adjustViewBounds="true"-->
+    <!--        android:background="#00FFFFFF"-->
+    <!--        android:onClick="sadbtn"-->
+    <!--        android:padding="0dp"-->
+    <!--        android:scaleType="fitCenter"-->
+    <!--        android:src="@drawable/sademoji"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/quesBox" />-->
 
     <TextView
         android:id="@+id/Messagebox"
@@ -236,6 +204,67 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/happyEButton"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="104dp"
+        android:background="#31CCFF90"
+        android:onClick="happybtn"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quesBox"
+        app:srcCompat="@drawable/feelinghappy" />
+
+    <ImageButton
+        android:id="@+id/anxiousBtn"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_marginTop="140dp"
+        android:background="#20FF9E80"
+        android:onClick="anxiousbtn"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/checkBox1"
+        app:srcCompat="@drawable/feelinganxious" />
+
+
+    <!--        android:id="@+id/anxiousBtn"-->
+    <!--        android:layout_width="79dp"-->
+    <!--        android:layout_height="58dp"-->
+    <!--        android:layout_marginTop="228dp"-->
+    <!--        android:layout_marginEnd="164dp"-->
+    <!--        android:layout_marginRight="164dp"-->
+    <!--        android:adjustViewBounds="true"-->
+    <!--        android:background="#00FFFFFF"-->
+    <!--        android:onClick="anxiousbtn"-->
+    <!--        android:padding="0dp"-->
+    <!--        android:scaleType="fitCenter"-->
+    <!--        android:src="@drawable/anxious"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/quesBox" />-->
+
+    <!--    <ImageButton&ndash;&gt;-->
+    <!--        android:id="@+id/happyEButton"-->
+    <!--        android:layout_width="82dp"-->
+    <!--        android:layout_height="66dp"-->
+    <!--        android:layout_marginStart="164dp"-->
+    <!--        android:layout_marginLeft="164dp"-->
+    <!--        android:layout_marginTop="156dp"-->
+    <!--        android:adjustViewBounds="true"-->
+    <!--        android:background="#00FFFFFF"-->
+    <!--        android:contentDescription="happybtn"-->
+    <!--        android:onClick="happybtn"-->
+    <!--        android:padding="0dp"-->
+    <!--        android:scaleType="fitCenter"-->
+    <!--        android:src="@drawable/img1"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/quesBox" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

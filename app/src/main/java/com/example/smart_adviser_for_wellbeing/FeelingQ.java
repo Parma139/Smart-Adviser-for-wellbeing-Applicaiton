@@ -155,7 +155,6 @@ public class FeelingQ extends AppCompatActivity {
         int Score1 = 0;
         userScoreAdd = Score1;
 
-        CheckBox checkOpt1 = findViewById(R.id.checkBox1);
         CheckBox checkOpt2 = findViewById(R.id.checkBox2);
         CheckBox checkOpt3 = findViewById(R.id.checkBox3);
         CheckBox checkOpt4 = findViewById(R.id.checkBox4);
@@ -186,7 +185,6 @@ public class FeelingQ extends AppCompatActivity {
         userScoreAdd = Score2;
 
         CheckBox checkOpt1 = findViewById(R.id.checkBox1);
-        CheckBox checkOpt2 = findViewById(R.id.checkBox2);
         CheckBox checkOpt3 = findViewById(R.id.checkBox3);
         CheckBox checkOpt4 = findViewById(R.id.checkBox4);
 
@@ -218,7 +216,6 @@ public class FeelingQ extends AppCompatActivity {
 
         CheckBox checkOpt1 = findViewById(R.id.checkBox1);
         CheckBox checkOpt2 = findViewById(R.id.checkBox2);
-        CheckBox checkOpt3 = findViewById(R.id.checkBox3);
         CheckBox checkOpt4 = findViewById(R.id.checkBox4);
 
         nextButton =findViewById(R.id.nextButton);
@@ -521,8 +518,8 @@ public class FeelingQ extends AppCompatActivity {
         feelingenterbtn.setVisibility(View.INVISIBLE);
         feelingbox = findViewById(R.id.userfeelingInputbox);
         feelingbox.setVisibility(View.INVISIBLE);
-        sadBtn = findViewById(R.id.sademojibtn);
-        sadBtn.setVisibility(View.INVISIBLE);
+//        sadBtn = findViewById(R.id.sademojibtn);
+//        sadBtn.setVisibility(View.INVISIBLE);
         anxiousBtn =findViewById(R.id.anxiousBtn);
         anxiousBtn.setVisibility(View.INVISIBLE);
     }

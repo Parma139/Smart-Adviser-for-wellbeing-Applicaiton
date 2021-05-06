@@ -29,7 +29,12 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-
+    <TextView
+        android:id="@+id/aboutcontent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/Aboutcontent" />
 
 
 </LinearLayout>

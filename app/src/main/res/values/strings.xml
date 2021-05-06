@@ -92,5 +92,11 @@
 
 
     </string>
+    <string name="Aboutcontent">
+        \n\n<b>This app is designed to help you understand your feeling or mood. It has a great feature that asks 16 types of questions with four options. After completing the questions, give you the five scores: Anger, Stress, Depression, Anxiety, and overall score. The reason is to choose these four feelings is because Anger, Stress is not a mental health issue, but it leads to Depression and Anxiety type mental health issue. This application helps you to understand that you are feeling stress or anger.</b>
+        \n\n<b>Most of the time, people think they are suffering from Anxiety or Depression but they just feel stress or anger, which is the initial stage and can be easily controlled. This application also has various links that lead to a webpage and help you tackle these problems. It has notes functionality where you can write in detail about your feeling. It also has view report functionality which includes your score, and you see the change of your mood quickly.</b>
+        \n\n<b>This application works offline, but if you prefer to read essential tips and practices, how to tackle the problem requires the internet.</b>
+
+    </string>
 
 </resources>
