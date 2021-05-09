@@ -40,14 +40,12 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ListView
-        android:id="@+id/noteListView"
+    <Button
+        android:id="@+id/openNote"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="3dp"
-        android:dividerHeight="3dp"
-        android:divider="@color/purple_500"/>
-
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:text="OpenNote" />
 
 
 </LinearLayout>

@@ -27,12 +27,23 @@ public class Home extends Fragment {
         //    return inflater.inflate(R.layout.fragment_general, container, false);
 
         //********vriable for button
-        Button btn = view.findViewById(R.id.btnHru);
+        Button btnHru = view.findViewById(R.id.btnHru);
+        Button btnVrpt = view.findViewById(R.id.viewreport);
 
-        btn.setOnClickListener(new View.OnClickListener(){
+
+        btnHru.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent newNoteIntent = new Intent(view.getContext(), FeelingQ.class);
+                startActivity(newNoteIntent);
+            }
+
+        });
+
+        btnVrpt.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent newNoteIntent = new Intent(view.getContext(), ViewReport.class);
                 startActivity(newNoteIntent);
             }
 

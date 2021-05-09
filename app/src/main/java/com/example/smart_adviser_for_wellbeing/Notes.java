@@ -31,6 +31,7 @@ public class Notes extends Fragment {
     }
 
 
+
     RecyclerView recyclerView;
     FloatingActionButton floatingActionButton;
     Adapter adapter;
@@ -41,11 +42,24 @@ public class Notes extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notes, container, false);
         Button newNotebtn = view.findViewById(R.id.saveBtn);
+        Button openNotebtn = view.findViewById(R.id.openNote);
+
+
 
         newNotebtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent newNoteIntent = new Intent(view.getContext(), NoteDetailActivity.class);
+                startActivity(newNoteIntent);
+            }
+
+
+        });
+
+        openNotebtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent newNoteIntent = new Intent(view.getContext(), DatabaseNoteHandler.class);
                 startActivity(newNoteIntent);
             }
 

@@ -85,7 +85,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/goodtoday"
+        android:id="@+id/feelinginfo"
         android:layout_width="302dp"
         android:layout_height="78dp"
         android:inputType="textMultiLine"
@@ -107,7 +107,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/indetail"
+        android:id="@+id/didgoodinfo"
         android:layout_width="302dp"
         android:layout_height="78dp"
         android:layout_gravity="center"

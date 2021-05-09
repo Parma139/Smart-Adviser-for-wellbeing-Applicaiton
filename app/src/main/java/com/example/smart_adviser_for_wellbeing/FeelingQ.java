@@ -1,34 +1,39 @@
 package com.example.smart_adviser_for_wellbeing;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 
-import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class FeelingQ extends AppCompatActivity {
 
 
-    private int countQnum = 0;
-    private int userScore;
-    private int userScoreAdd;
-    private int anxietyScore;
-    private int angerScore;
-    private int stressScore;
-    private int depressionScore;
-    public String Mood;
-    public String userMood;
+    private static int countQnum = 0;
+    private static int userScore;
+    private static int userScoreAdd;
+    private static int anxietyScore;
+    private static int angerScore;
+    private static int stressScore;
+    private static int depressionScore;
+    public  static String Mood;
+    public  static String userMood;
     private static String moodforNpage = "N/A";
+    public  static String scoreDate;
+    static  int Score1;
+    static  int Score2;
+    static  int Score3;
+    static  int Score4;
 
-    DatabaseHelperScore scoredb;
+
 
 
 
@@ -38,15 +43,21 @@ public class FeelingQ extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feeling_q);
 
-        scoredb = new DatabaseHelperScore(this);
+
+
+
+        Date date = Calendar.getInstance().getTime();
+        scoreDate = DateFormat.getDateInstance().format(date);
+
 
         Button closebtnfeelingQ = findViewById(R.id.closeBtnlog);
 
         closebtnfeelingQ.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+//               saveScore();
+               finish();
 
-                finish();
             }
 
         });
@@ -66,6 +77,8 @@ public class FeelingQ extends AppCompatActivity {
         String currentMood = "Happy";
         Mood = currentMood;
         moodforNpage = currentMood;
+        Toast.makeText(FeelingQ.this, scoreDate, Toast.LENGTH_LONG).show();
+
 
     }
 
@@ -112,6 +125,7 @@ public class FeelingQ extends AppCompatActivity {
             userScore = userScore + userScoreAdd;
 
             scoreForall();
+//            showData();
 
             nextButton = findViewById(R.id.nextButton);
             nextButton.setVisibility(View.INVISIBLE);
@@ -137,6 +151,7 @@ public class FeelingQ extends AppCompatActivity {
 
             if (countQnum == 17) {
 
+//                sendscore();
                 allQuOpt();
                 finalBoxOutput = findViewById(R.id.finalbox);
                 finalBoxOutput.setVisibility(View.VISIBLE);
@@ -156,7 +171,7 @@ public class FeelingQ extends AppCompatActivity {
 
     public void ques1btn(View v){
 
-        int Score1 = 0;
+         Score1 = 0;
         userScoreAdd = Score1;
 
         CheckBox checkOpt2 = findViewById(R.id.checkBox2);
@@ -185,7 +200,7 @@ public class FeelingQ extends AppCompatActivity {
 
     public void ques2btn(View v){
 
-        int Score2 = 1;
+        Score2 = 1;
         userScoreAdd = Score2;
 
         CheckBox checkOpt1 = findViewById(R.id.checkBox1);
@@ -215,7 +230,7 @@ public class FeelingQ extends AppCompatActivity {
 
     public void ques3btn(View v){
 
-        int Score3 = 2;
+         Score3 = 2;
         userScoreAdd = Score3;
 
         CheckBox checkOpt1 = findViewById(R.id.checkBox1);
@@ -245,7 +260,7 @@ public class FeelingQ extends AppCompatActivity {
 
     public void ques4btn(View v){
 
-        int Score4 = 3;
+        Score4 = 3;
         userScoreAdd = Score4;
 
         CheckBox checkOpt1 = findViewById(R.id.checkBox1);
@@ -556,8 +571,34 @@ public class FeelingQ extends AppCompatActivity {
 
     }
 
-    public static String getmood() {
+    /*
+       Sending the value to Note layout
+     */
+    public  static String getmood() {
         return moodforNpage;
+    }
+
+    /*
+        Sending the value to ViewReport layout
+     */
+    public  static String getdate() {
+        return scoreDate;
+    }
+    public  static String getangerscore() {
+        return String.valueOf(angerScore);
+    }
+    public  static String getstressscore() {
+
+        return String.valueOf(stressScore);
+    }
+    public  static String getdepressionscore() {
+        return String.valueOf(depressionScore);
+    }
+    public  static String getanxietyscore() {
+        return String.valueOf(anxietyScore);
+    }
+    public  static String getuserscore() {
+        return String.valueOf(userScore);
     }
 
 }
