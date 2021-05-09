@@ -28,6 +28,8 @@ public class FeelingQ extends AppCompatActivity {
     public String userMood;
     private static String moodforNpage = "N/A";
 
+    DatabaseHelperScore scoredb;
+
 
 
     @Override
@@ -35,6 +37,8 @@ public class FeelingQ extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feeling_q);
+
+        scoredb = new DatabaseHelperScore(this);
 
         Button closebtnfeelingQ = findViewById(R.id.closeBtnlog);
 
