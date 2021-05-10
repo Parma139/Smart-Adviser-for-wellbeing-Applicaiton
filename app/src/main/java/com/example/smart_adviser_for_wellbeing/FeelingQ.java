@@ -582,6 +582,7 @@ public class FeelingQ extends AppCompatActivity {
         Sending the value to ViewReport layout
      */
     public  static String getdate() {
+
         return scoreDate;
     }
     public  static String getangerscore() {
@@ -592,12 +593,15 @@ public class FeelingQ extends AppCompatActivity {
         return String.valueOf(stressScore);
     }
     public  static String getdepressionscore() {
+
         return String.valueOf(depressionScore);
     }
     public  static String getanxietyscore() {
+
         return String.valueOf(anxietyScore);
     }
     public  static String getuserscore() {
+
         return String.valueOf(userScore);
     }
 
