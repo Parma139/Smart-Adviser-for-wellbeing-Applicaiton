@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundimage"
     android:orientation="vertical"
     tools:context=".Reading">
 
@@ -11,7 +12,7 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2196F3"
+        android:background="#002196F3"
         android:minHeight="?actionBarSize"
         android:theme="?actionBarTheme">
 
@@ -20,8 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Reading"
-            android:textColor="@color/white"
+            android:text="READING"
+            android:textColor="#B2070707"
             android:textSize="35sp"
             android:textStyle="bold" />
 
@@ -42,45 +43,44 @@
         android:id="@+id/anxietyReadBtn"
         android:layout_width="match_parent"
         android:layout_height="71dp"
-        android:background="#5A5151"
         android:text="Anxiety"
-        android:textColor="#3F51B5"
+        android:textColor="#446161"
         android:textColorHighlight="#FFFFFF"
         android:textColorLink="#2196F3"
         android:textCursorDrawable="@drawable/img1"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#7EC2E33F" />
+        app:backgroundTint="#7284FFFF" />
 
     <Button
         android:id="@+id/depressionReadingbtn"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:text="DEPRESSION"
-        android:textColor="#3F51B5"
+        android:textColor="#446161"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#7EC2E33F" />
+        app:backgroundTint="#7284FFFF" />
 
     <Button
         android:id="@+id/angryReadingbtn"
         android:layout_width="match_parent"
         android:layout_height="84dp"
         android:text="ANGRY"
-        android:textColor="#3F51B5"
+        android:textColor="#446161"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#7EC2E33F" />
+        app:backgroundTint="#7284FFFF" />
 
     <Button
         android:id="@+id/stressReadingBtn"
         android:layout_width="match_parent"
         android:layout_height="77dp"
         android:text="Stress"
-        android:textColor="#3F51B5"
+        android:textColor="#446161"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#7EC2E33F" />
+        app:backgroundTint="#7284FFFF" />
 
 
     <Button
@@ -88,10 +88,10 @@
         android:layout_width="match_parent"
         android:layout_height="82dp"
         android:text="Click Here for More"
-        android:textColor="#3F51B5"
+        android:textColor="#446161"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#7EC2E33F" />
+        app:backgroundTint="#7284FFFF" />
 
 
 </LinearLayout>

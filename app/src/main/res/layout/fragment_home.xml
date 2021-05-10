@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundimage"
     tools:context=".Home">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,62 +14,61 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#2196F3"
+        android:background="#002196F3"
         android:gravity="center"
-        android:text= "Home"
-        android:textColor="#FFFFFF"
+        android:text="HOME"
+        android:textColor="#B2070707"
         android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="388dp"
-        android:layout_height="163dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="80dp"
-        android:src="@android:drawable/editbox_dropdown_dark_frame"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeIcon" />
-
     <Button
         android:id="@+id/btnHru"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="304dp"
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="300dp"
+
+        android:hapticFeedbackEnabled="false"
         android:text="How are you feeling today"
+        android:textColor="#446161"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#7284FFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/homeIcon" />
 
     <Button
         android:id="@+id/viewreport"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginLeft="148dp"
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
 
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="12dp"
         android:text="View Report"
+        android:textColor="#446161"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#7284FFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnHru" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="198dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="56dp"
-        android:background="#00F3EFEF"
-        android:gravity="center"
-        android:text="Imageneeded"
-        android:textColor="#F6F1F1"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+    <ImageView
+        android:id="@+id/imagehome"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="40dp"
+        android:background="#27978D8D"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/homeimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeIcon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

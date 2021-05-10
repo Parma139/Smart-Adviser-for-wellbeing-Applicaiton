@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0081D4FA"
+    android:background="@drawable/backgroundimage"
     tools:context=".FeelingQ">
 
     <TextView
@@ -20,21 +20,6 @@
         android:textSize="30sp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/feelingQbox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="#00C6BFBF"
-        android:fontFamily="sans-serif-black"
-        android:gravity="center"
-        android:text="Select your feeling"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -53,6 +38,23 @@
     <!--        android:src="@drawable/sademoji"-->
     <!--        app:layout_constraintStart_toStartOf="parent"-->
     <!--        app:layout_constraintTop_toBottomOf="@+id/quesBox" />-->
+
+    <TextView
+        android:id="@+id/feelingQbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:background="#0084FFFF"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Select your feeling"
+        android:textColor="#446161"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Messagebox"
@@ -143,9 +145,11 @@
         android:layout_marginTop="388dp"
         android:layout_marginEnd="116dp"
         android:layout_marginRight="116dp"
+        android:background="#9F2B2828"
         android:onClick="nextBtn"
         android:text="Next"
         android:visibility="invisible"
+        app:backgroundTint="#9F2B2828"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feelingQbox" />
 
@@ -156,9 +160,11 @@
         android:layout_marginTop="364dp"
         android:layout_marginEnd="108dp"
         android:layout_marginRight="108dp"
+        android:background="#9F2B2828"
         android:text="Close"
         android:textSize="18sp"
         android:visibility="invisible"
+        app:backgroundTint="#9F2B2828"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feelingQbox" />
 
@@ -166,9 +172,9 @@
         android:id="@+id/userfeelingInputbox"
         android:layout_width="362dp"
         android:layout_height="65dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="416dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="wrtie here if you are feeling something else"
@@ -179,10 +185,10 @@
         android:id="@+id/feelingbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="452dp"
+        android:layout_marginTop="480dp"
         android:layout_marginEnd="36dp"
         android:layout_marginRight="36dp"
-        android:background="#312B2828"
+        android:background="#9F2B2828"
         android:onClick="feelingbtn"
         android:text="Click here"
         android:textColor="#171616"
@@ -209,13 +215,12 @@
         android:id="@+id/happyEButton"
         android:layout_width="match_parent"
         android:layout_height="68dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
         android:layout_marginTop="104dp"
-        android:background="#31CCFF90"
+        android:background="#7C5E35B1"
         android:onClick="happybtn"
         android:padding="0dp"
         android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quesBox"
         app:srcCompat="@drawable/feelinghappy" />
@@ -224,14 +229,48 @@
         android:id="@+id/anxiousBtn"
         android:layout_width="match_parent"
         android:layout_height="68dp"
-        android:layout_marginTop="140dp"
-        android:background="#20FF9E80"
+        android:layout_marginTop="128dp"
+        android:background="#92AB6A39"
         android:onClick="anxiousbtn"
         android:padding="0dp"
         android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/checkBox1"
         app:srcCompat="@drawable/feelinganxious" />
+
+    <ImageButton
+        android:id="@+id/stressemojbtn"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_marginTop="332dp"
+        android:onClick="stressbtn"
+        android:background="#7EFB8C00"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/finalbox"
+        app:srcCompat="@drawable/feelingstress" />
+
+    <ImageButton
+        android:id="@+id/depressedemojibutton"
+        android:layout_width="549dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:background="#6DBF360C"
+        android:onClick="depressiontn"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/finalbox"
+        app:srcCompat="@drawable/feelingdepressed" />
 
 
     <!--        android:id="@+id/anxiousBtn"-->

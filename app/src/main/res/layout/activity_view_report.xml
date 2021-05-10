@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundimage"
     tools:context=".ViewReport">
 
     <Button
@@ -12,6 +13,9 @@
         android:layout_height="95dp"
         android:layout_marginTop="212dp"
         android:text="View Score in Detail"
+        android:textColor="#446161"
+        android:textStyle="bold"
+        app:backgroundTint="#7284FFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,6 +25,21 @@
         android:layout_height="95dp"
         android:layout_marginTop="33dp"
         android:text="View Bar Graph"
+        android:textColor="#446161"
+        android:textStyle="bold"
+        app:backgroundTint="#7284FFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewscore" />
+
+    <Button
+        android:id="@+id/closebtnreport"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="568dp"
+        android:background="#9F2B2828"
+        android:text="Close"
+        android:textColorHint="#00446161"
+        app:backgroundTint="#9F2B2828"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class ViewReport extends AppCompatActivity {
 
@@ -20,7 +19,7 @@ public class ViewReport extends AppCompatActivity {
     String userScore;
 
     DatabaseHelperScore scoredb;
-    Button showallscore, showbargraph;
+    Button showallscore, showbargraph, closereportbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +30,7 @@ public class ViewReport extends AppCompatActivity {
 
         showallscore = findViewById(R.id.viewscore);
         showbargraph = findViewById(R.id.viewbargraph);
+        closereportbtn = findViewById(R.id.closebtnreport);
 
         scoreDate = FeelingQ.getdate();
         angerScore = FeelingQ.getangerscore();
@@ -46,6 +46,18 @@ public class ViewReport extends AppCompatActivity {
             public void onClick(View v){
 
             showData();
+
+            }
+
+        });
+
+
+
+        closereportbtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+//               saveScore();
+                finish();
 
             }
 

@@ -2,17 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<!--    app:layout_behavior="@"-->
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundimage"
+    android:orientation="vertical">
+    <!--    app:layout_behavior="@"-->
     tools:context=".Notes">
 
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2196F3"
+        android:background="#002196F3"
         android:minHeight="?actionBarSize"
         android:theme="?actionBarTheme">
 
@@ -20,25 +21,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Notes"
-            android:textColor="@color/white"
+            android:text="NOTES"
+            android:textColor="#B2070707"
+            android:textColorLink="#B2070707"
             android:textSize="35sp"
             android:textStyle="bold" />
 
-        <Button
-
-            android:id="@+id/addBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:onClick="newNote"
-            android:text="+"
-            android:textColor="@color/white"
-            android:textSize="35sp"
-            android:textStyle="bold"
-            app:backgroundTint="#18588A" />
+         />
 
     </androidx.appcompat.widget.Toolbar>
+
+    <Button
+
+        android:id="@+id/addBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginHorizontal="155dp"
+        android:layout_marginTop="475dp"
+        android:icon="@drawable/home"
+        android:onClick="newNote"
+        android:text="+"
+
+        android:textColor="@color/black"
+        android:textColorHighlight="#1B1818"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:backgroundTint="#A684FFFF" />
 
 
 </LinearLayout>

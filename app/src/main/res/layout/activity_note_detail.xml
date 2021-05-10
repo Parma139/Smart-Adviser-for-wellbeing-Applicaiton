@@ -2,51 +2,56 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundimage"
+    android:orientation="vertical"
     tools:context=".NoteDetailActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#C1333135"
         android:minHeight="?actionBarSize"
-        android:theme="?actionBarTheme"
-        android:background="#C1333135">
+        android:theme="?actionBarTheme">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="DETAIL"
-            android:textSize="35sp"
             android:textColor="#EFEBEB"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/addBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
+            android:background="#B436C544"
             android:backgroundTint="#B436C544"
             android:onClick="saveNote"
             android:text="SAVE"
             android:textColor="@color/black"
             android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:backgroundTint="#B436C544" />
 
         <Button
             android:id="@+id/deleteNoteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DELETE"
-            android:backgroundTint="#DDEF2020"
-
             android:layout_gravity="start"
+            android:background="#D83F3F"
+
+            android:backgroundTint="#DDEF2020"
+            android:onClick="deleteNote"
+            android:text="DELETE"
             android:textColor="@color/black"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:onClick="deleteNote"/>
+            app:backgroundTint="#D31717" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -88,9 +93,9 @@
         android:id="@+id/feelinginfo"
         android:layout_width="302dp"
         android:layout_height="78dp"
-        android:inputType="textMultiLine"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
+        android:inputType="textMultiLine"
         android:minLines="3"
         android:textColor="#09AEED"
         android:textSize="25sp" />
@@ -111,21 +116,22 @@
         android:layout_width="302dp"
         android:layout_height="78dp"
         android:layout_gravity="center"
-        android:inputType="textMultiLine"
         android:layout_marginTop="20dp"
+        android:inputType="textMultiLine"
         android:minLines="3"
         android:textColor="#09AEED"
         android:textSize="25sp" />
-
 
 
     <Button
         android:id="@+id/closebtnNDA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Close"
         android:layout_marginTop="20dp"
+        android:background="#9F2B2828"
+        android:text="Close"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:backgroundTint="#9F2B2828" />
 
 </LinearLayout>

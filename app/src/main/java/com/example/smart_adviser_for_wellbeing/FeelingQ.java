@@ -92,11 +92,21 @@ public class FeelingQ extends AppCompatActivity {
 
     }
 
-    public void sadbtn(View v){
+    public void stressbtn(View v){
 
         visibilityforSelectFeeling();
 
-        userMood = "Sad";
+        userMood = "Stress";
+        Mood = userMood;
+        moodforNpage = userMood;
+
+    }
+
+    public void depressiontn(View v){
+
+        visibilityforSelectFeeling();
+
+        userMood = "Depression";
         Mood = userMood;
         moodforNpage = userMood;
 
@@ -299,9 +309,9 @@ public class FeelingQ extends AppCompatActivity {
        View quesBox;
        View finalBoxOutput;
        View closebtnlog;
-       View happyBtn;
+       View depressBtn;
        View anxiousBtn;
-       View sadBtn;
+       View stressBtn;
        View feelingenterbtn;
        View feelingbox;
        View questionNoBoxV;
@@ -381,7 +391,7 @@ public class FeelingQ extends AppCompatActivity {
         if (Mood.equals("Happy")) {
             happyResult(userScore);
         }
-        if (Mood.equals("Anxious") || Mood.equals("Sad")){
+        if (Mood.equals("Anxious") || Mood.equals("Stress") || Mood.equals("Depression")){
             anxiousResult(userScore);
         }
         if (Mood.equals(userMood)){
@@ -537,8 +547,10 @@ public class FeelingQ extends AppCompatActivity {
         feelingenterbtn.setVisibility(View.INVISIBLE);
         feelingbox = findViewById(R.id.userfeelingInputbox);
         feelingbox.setVisibility(View.INVISIBLE);
-//        sadBtn = findViewById(R.id.sademojibtn);
-//        sadBtn.setVisibility(View.INVISIBLE);
+        stressBtn = findViewById(R.id.stressemojbtn);
+        stressBtn.setVisibility(View.INVISIBLE);
+        depressBtn = findViewById(R.id.depressedemojibutton);
+        depressBtn.setVisibility(View.INVISIBLE);
         anxiousBtn =findViewById(R.id.anxiousBtn);
         anxiousBtn.setVisibility(View.INVISIBLE);
     }

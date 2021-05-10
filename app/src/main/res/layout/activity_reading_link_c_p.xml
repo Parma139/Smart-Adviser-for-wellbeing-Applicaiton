@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundimage"
     tools:context=".ReadingLinkCP">
 
 
@@ -14,14 +15,15 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="READING LINKS"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/TitleforReading"
-        android:layout_marginTop="25dp"
-        >
+        android:layout_marginTop="25dp">
+
         <TextView
             android:id="@+id/Readinglinkcp"
             android:layout_width="match_parent"
@@ -37,7 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginTop="600dp"
-        android:text="Close" />
+        android:text="Close"
+        app:backgroundTint=" #9F2B2828" />
 
 
 </RelativeLayout>
