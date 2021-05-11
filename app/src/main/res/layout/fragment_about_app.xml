@@ -6,7 +6,7 @@
     android:background="@drawable/backgroundimage"
     android:orientation="vertical">
     <!--    app:layout_behavior="@"-->
-    tools:context=".Notes">
+    tools:context=".AboutApp">
 
 
     <androidx.appcompat.widget.Toolbar

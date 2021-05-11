@@ -5,15 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.net.ConnectivityManager;
-
 import androidx.annotation.Nullable;
 
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public class DatabaseHelperScore extends SQLiteOpenHelper {
-
-    // Database name and variable
 
     public static final String DATABASE_NAME = "userscore.db";
     public static final String TABLE_NAME = "User_score_table";
@@ -43,9 +38,19 @@ public class DatabaseHelperScore extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    /**
+     * This method use to insert the data in database
+     * @param date date hold the date content in format months days, year
+     * @param anger   anger hold the int variable as score
+     * @param stress stress hold the int variable as score
+     * @param depression depression hold the int variable as score
+     * @param anxiety anxiety hold the int variable as score
+     * @param tscore tscore hold the int variable total score
+     */
     public void insertData(String date, int anger, int stress, int depression, int anxiety, int tscore ){
 
         SQLiteDatabase db = this.getWritableDatabase();
+        // contentValues hold the data and then db.inseert add those data in database
         ContentValues contentValues = new ContentValues();
         contentValues.put(DATE, date);
         contentValues.put(ANGER, anger);
@@ -56,6 +61,11 @@ public class DatabaseHelperScore extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, contentValues);
 
     }
+
+    /**
+     * This method use to access the data from the database and return those data
+     * @return return the result of rawquery
+     */
 
     public Cursor getData(){
 

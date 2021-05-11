@@ -87,37 +87,29 @@ public class ViewReport extends AppCompatActivity {
         Cursor data = scoredb.getData();
 
         if(  data.getCount() == 0){
-                    showMessage("Ops!", "No history has been added");
+                    showMessage("Ops!", "No score has been added");
             return;
         }else {
-
                     StringBuffer buffer = new StringBuffer();
                     while(data.moveToNext()){
-
-
                         buffer.append("Date :" + data.getString(1)+ "\n");
                         buffer.append("Anger Score :" + data.getString(2)+ "\n");
                         buffer.append("Stress Score :" + data.getString(3)+ "\n");
                         buffer.append("Depression Score :" + data.getString(4)+ "\n");
                         buffer.append("Anxiety Score :" + data.getString(5)+ "\n");
                         buffer.append("Total Score :" + data.getString(6)+ "\n\n");
-
-
                     }
                     showMessage("Overall Score List",buffer.toString());
         }
-
     }
 
     public void showMessage(String tittle, String message){
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setCancelable(true);
         builder.setTitle(tittle);
         builder.setMessage(message);
         builder.show();
 
     }
-
 }

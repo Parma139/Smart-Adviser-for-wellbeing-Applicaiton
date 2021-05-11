@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
-
  * create an instance of this fragment.
  */
 public class AboutApp extends Fragment {
@@ -18,8 +17,6 @@ public class AboutApp extends Fragment {
     public AboutApp() {
         // Required empty public constructor
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
