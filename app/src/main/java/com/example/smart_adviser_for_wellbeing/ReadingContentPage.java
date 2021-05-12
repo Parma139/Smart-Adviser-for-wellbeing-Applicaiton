@@ -12,21 +12,27 @@ import org.w3c.dom.Text;
 
 public class ReadingContentPage extends AppCompatActivity {
 
+    TextView connectLink;
+    Button closeReadpage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reading_content_page);
 
 
-        TextView connectLink = findViewById(R.id.ReadingContentAnxiety);
+        connectLink = findViewById(R.id.ReadingContentAnxiety);
+        closeReadpage = findViewById(R.id.closeReadPage);
+
+        //this allow the link to open a webpage when user click on it
         connectLink.setMovementMethod(LinkMovementMethod.getInstance());
 
-        Button closeReadpage = findViewById(R.id.closeReadPage);
+        // this handle the close button activity
         closeReadpage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
 
-                finish();
+                finish();                        //close the ReadingContentPage layout
             }
 
         });

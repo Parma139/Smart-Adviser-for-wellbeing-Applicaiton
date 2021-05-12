@@ -3,16 +3,14 @@ package com.example.smart_adviser_for_wellbeing;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageButton;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    BottomNavigationView btnNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,15 +18,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        BottomNavigationView btnNav = findViewById(R.id.bottomNavigationview);
+        btnNav = findViewById(R.id.bottomNavigationview);
         btnNav.setOnNavigationItemSelectedListener(navListener);
 
-        // Setting home as a main fragment
+        //getsupportFragementManager is used to set the home page as main fragement
 
          getSupportFragmentManager().beginTransaction().replace(R.id.fragmentscreen_layout, new Home()).commit();
 
     }
 
+    /*
+    BottomNaviagtionView is used to assign activity page for buttons which are available in the naviagtions bar
+     */
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -54,13 +55,12 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
-            //Begin transisiton
+            // getSupportFragementManager is used here to change the acitivtiy page depend on selected button by users in the navigation bar
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentscreen_layout, selectedFragment).addToBackStack(null).commit();
             return true;
 
 
         }
     };
-
 
 }

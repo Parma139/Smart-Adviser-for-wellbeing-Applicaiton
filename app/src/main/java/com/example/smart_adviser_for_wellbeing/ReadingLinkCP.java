@@ -10,21 +10,27 @@ import android.widget.TextView;
 
 public class ReadingLinkCP extends AppCompatActivity {
 
+
+    TextView connectLink;
+    Button closeReadpage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reading_link_c_p);
 
+        connectLink = findViewById(R.id.Readinglinkcp);
+        closeReadpage = findViewById(R.id.closeReadPage);
 
-        TextView connectLink = findViewById(R.id.Readinglinkcp);
+        //this allow the link to open a webpage when user click on it
         connectLink.setMovementMethod(LinkMovementMethod.getInstance());
 
-        Button closeReadpage = findViewById(R.id.closeReadPage);
+        // this handle the close button activity
         closeReadpage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
 
-                finish();
+                finish();                   //close the ReadingDepressionCP layout page
             }
 
         });

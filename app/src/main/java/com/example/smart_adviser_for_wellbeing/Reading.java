@@ -20,7 +20,7 @@ public class Reading extends Fragment {
         // Required empty public constructor
     }
 
-
+    Button readinganxietyPageBtn, timeManagementbtn, angrytbtn, stresstbtn, readinglinktbtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,20 +28,24 @@ public class Reading extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_reading, container, false);
 
-        Button readinganxietyPageBtn = view.findViewById(R.id.anxietyReadBtn);
+        readinganxietyPageBtn = view.findViewById(R.id.anxietyReadBtn);
+        timeManagementbtn = view.findViewById(R.id.depressionReadingbtn);
+        angrytbtn = view.findViewById(R.id.angryReadingbtn);
+        stresstbtn = view.findViewById(R.id.stressReadingBtn);
+        readinglinktbtn = view.findViewById(R.id.clickformorereadingbtn);
+
+
+        // this handle the Anxiety button activity
         readinganxietyPageBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent newNoteIntent = new Intent(view.getContext(), ReadingContentPage.class);
                 startActivity(newNoteIntent);
-
-
             }
 
         });
 
-        Button timeManagementbtn = view.findViewById(R.id.depressionReadingbtn);
-
+        // this handle the TimeManagement button activity
         timeManagementbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -52,8 +56,7 @@ public class Reading extends Fragment {
 
         });
 
-        Button angrytbtn = view.findViewById(R.id.angryReadingbtn);
-
+        // this handle the Angry button activity
         angrytbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -64,8 +67,7 @@ public class Reading extends Fragment {
 
         });
 
-        Button stresstbtn = view.findViewById(R.id.stressReadingBtn);
-
+        // this handle the Stress button activity
         stresstbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -76,8 +78,7 @@ public class Reading extends Fragment {
 
         });
 
-        Button readinglinktbtn = view.findViewById(R.id.clickformorereadingbtn);
-
+        // this handle the ClickHereforMore button activity
         readinglinktbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -91,6 +92,5 @@ public class Reading extends Fragment {
 
         return view;
     }
-
 
 }

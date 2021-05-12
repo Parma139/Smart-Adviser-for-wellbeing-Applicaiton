@@ -19,6 +19,7 @@ public class Home extends Fragment {
     }
 
 
+    Button btnHru, btnVrpt;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,11 +27,11 @@ public class Home extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         //    return inflater.inflate(R.layout.fragment_general, container, false);
 
-        //********vriable for button
-        Button btnHru = view.findViewById(R.id.btnHru);
-        Button btnVrpt = view.findViewById(R.id.viewreport);
 
+       btnHru = view.findViewById(R.id.btnHru);
+       btnVrpt = view.findViewById(R.id.viewreport);
 
+        // this handle the how are you button activity
         btnHru.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -39,7 +40,7 @@ public class Home extends Fragment {
             }
 
         });
-
+        // this handle the view report button activity
         btnVrpt.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

@@ -7,8 +7,6 @@
     android:background="@drawable/backgroundimage"
     tools:context=".Home">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <TextView
         android:id="@+id/homeIcon"
         android:layout_width="match_parent"

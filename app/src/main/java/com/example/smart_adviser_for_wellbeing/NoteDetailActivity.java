@@ -9,10 +9,9 @@ import android.widget.TextView;
 
 public class NoteDetailActivity extends AppCompatActivity {
 
-    String feeling;
+
     TextView textView;
-
-
+    Button closebtnNDA;
 
 
     @Override
@@ -20,33 +19,20 @@ public class NoteDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_detail);
 
-
         textView = findViewById(R.id.feelingtoday);
         textView.setText(FeelingQ.getmood());
 
 
+        closebtnNDA = findViewById(R.id.closebtnNDA);
 
-        Button closebtnNDA = findViewById(R.id.closebtnNDA);
-        Button savebtn = findViewById(R.id.addBtn);
-
-        closebtnNDA.setOnClickListener(new View.OnClickListener(){
+        // this handle the close button activity
+        closebtnNDA.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
 
-                finish();
+                finish();                       //close the NoteDetailActivity layout page
             }
 
         });
-
-
     }
-
-
-    public static void saveNote(View view) {
-
-    }
-
-    public void deleteNote(View view) {
-    }
-
 }

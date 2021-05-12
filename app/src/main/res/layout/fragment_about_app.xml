@@ -1,13 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundimage"
     android:orientation="vertical">
-    <!--    app:layout_behavior="@"-->
     tools:context=".AboutApp">
-
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -21,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="ABOUT"
-            android:textColor="#B2070707"
+            android:textColor="#070707"
             android:textColorHighlight="#B2070707"
             android:textSize="35sp"
             android:textStyle="bold" />
@@ -29,12 +26,18 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/aboutcontent"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/Aboutcontent" />
+        android:layout_height="530dp">
 
+        <TextView
+            android:id="@+id/aboutcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:text="@string/Aboutcontent"
+            android:textSize="20sp" />
+
+    </ScrollView>
 
 </LinearLayout>

@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroundimage"
     android:orientation="vertical">
-    <!--    app:layout_behavior="@"-->
     tools:context=".Notes">
 
 

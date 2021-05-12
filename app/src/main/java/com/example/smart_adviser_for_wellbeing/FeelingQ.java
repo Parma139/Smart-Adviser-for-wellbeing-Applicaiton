@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -17,7 +15,7 @@ import java.util.Date;
 public class FeelingQ extends AppCompatActivity {
 
 
-    private static int countQnum = 0;
+    private static int countQnum;
     private static int userScore;
     private static int userScoreAdd;
     private  static int userScoreforViewR;
@@ -49,20 +47,19 @@ public class FeelingQ extends AppCompatActivity {
 
         closebtnfeelingQ = findViewById(R.id.closeBtnlog);      //assign the button
 
+        // this handle the close button activity
         closebtnfeelingQ.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
 
-               finish();
-               userScore = 0;
-
+               finish();                                     // close the feelingQ layout page
 
             }
 
         });
     }
 
-//    String currentMood;                 //hold the string variable for current mood
+    String currentMood;                 //hold the string variable for current mood
 
     /*
      This method is called when the user clicks the feeling happy button
@@ -70,10 +67,9 @@ public class FeelingQ extends AppCompatActivity {
     public void happybtn(View v){
 
         visibilityforSelectFeeling();
-        String currentMood = "Happy";
-        Mood = currentMood;
-        moodforNpage = currentMood;
-        Toast.makeText(FeelingQ.this, "I am in happybtn" + userScore, Toast.LENGTH_LONG).show();
+        currentMood = "Happy";
+        setMood(currentMood);
+        resetScore();
     }
 
     /*
@@ -83,10 +79,9 @@ public class FeelingQ extends AppCompatActivity {
     public void anxiousbtn(View v){
 
         visibilityforSelectFeeling();
-        String currentMood = "Anxious";
-        Mood = currentMood;
-        moodforNpage = currentMood;
-        Toast.makeText(FeelingQ.this, "I am in anxioudbtn" + userScore, Toast.LENGTH_LONG).show();
+        currentMood = "Anxious";
+        setMood(currentMood);
+        resetScore();
     }
 
     /*
@@ -96,10 +91,9 @@ public class FeelingQ extends AppCompatActivity {
     public void stressbtn(View v){
 
         visibilityforSelectFeeling();
-        String currentMood = "Stress";
-        Mood = currentMood;
-        moodforNpage = currentMood;
-        Toast.makeText(FeelingQ.this, "I am in stresbtn" + userScore, Toast.LENGTH_LONG).show();
+        currentMood = "Stress";
+        setMood(currentMood);
+        resetScore();
     }
 
     /*
@@ -108,10 +102,9 @@ public class FeelingQ extends AppCompatActivity {
     public void depressiontn(View v){
 
         visibilityforSelectFeeling();
-        String currentMood = "Depression";
-        Mood = currentMood;
-        moodforNpage = currentMood;
-        Toast.makeText(FeelingQ.this, "I am in depbtn" + userScore, Toast.LENGTH_LONG).show();
+        currentMood = "Depression";
+        setMood(currentMood);
+        resetScore();
 
     }
 
@@ -124,8 +117,8 @@ public class FeelingQ extends AppCompatActivity {
         visibilityforSelectFeeling();
         userMood = userfeelingInput.getText().toString();
         Mood = userMood;
-        moodforNpage=userfeelingInput.getText().toString().trim(); // moodforNpage hold value which is pass to note page
-
+        moodforNpage=userfeelingInput.getText().toString().trim(); // moodforNpage hold string variable which is pass to note page
+        resetScore();
     }
 
     /*
@@ -173,7 +166,6 @@ public class FeelingQ extends AppCompatActivity {
                 uncheckallbox();
                 closebtnlog = findViewById(R.id.closeBtnlog);
                 closebtnlog.setVisibility(View.VISIBLE);
-                countQnum = 0;
                 userScoreforViewR = userScore;
 
 
@@ -406,21 +398,20 @@ public class FeelingQ extends AppCompatActivity {
         checkBox4 = findViewById(R.id.checkBox4);
         checkBox4.setVisibility(View.INVISIBLE);
 
-        // if statement used here to call the method according to the user mood
+        // if statement used call the method according to the user mood
         if (Mood.equals("Happy")) {
             happyResult(userScore);
         }
-        if (Mood.equals("Anxious") || Mood.equals("Stress") || Mood.equals("Depression") || Mood.equals("Anxious")){
+        if (Mood.equals("Anxious") || Mood.equals("Stress") || Mood.equals("Depression") || Mood.equals("Anxious")
+                ||Mood.equals(userMood)){
             resultsforOtherMood(userScore);
         }
-//        if (Mood.equals(userMood)){
-//            sadResult(userScore);
-//        }
+
     }
 
 
     /**
-     * This is called when user selected feeling happy button
+     * This method is called when user selected feeling happy button
      * @param Score score hold the int variable which include the users overall score for selected mood
      */
     public void happyResult(int Score) {
@@ -431,31 +422,40 @@ public class FeelingQ extends AppCompatActivity {
         // 0 means positive and 48 means negative
         if (Score >= 0 & Score <= 12 ) {
 
-            finalBoxoutput.setText("\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nYeah! you feeling " + Mood);
+            finalBoxoutput.setText("\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"
+                    + "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"
+                    +"\n\nTotal you score: " + userScore + "/48 \nYeah! you feeling " + Mood);
 
         }
 
         if (Score >= 10 & Score <= 24 ) {
 
-            finalBoxoutput.setText("\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nYou are feeling " + Mood + "might be little bit you are unhappy");
+            finalBoxoutput.setText("\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"
+                    + "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"
+                    +"\n\nTotal you score: " + userScore + "/48 \nYou are feeling " + Mood
+                    + "might be little bit you are unhappy");
 
         }
 
         if (Score >= 20 & Score <=36) {
 
-            finalBoxoutput.setText("\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nChances are less that you are feeling " + Mood);
+            finalBoxoutput.setText("\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"
+                    + "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"
+                    +"\n\nTotal you score: " + userScore + "/48 \nChances are less that you are feeling " + Mood);
 
         }
 
         if (Score >= 30 & Score <=48) {
 
-            finalBoxoutput.setText("\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nChances are very less that you feeling " + Mood);
+            finalBoxoutput.setText("\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"
+                    + "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"
+                    +"\n\nTotal you score: " + userScore + "/48 \nChances are very less that you feeling " + Mood);
 
         }
     }
 
     /**
-     * This is called when user selected feeling anxious button
+     * This method is called when user selected feeling expect happy button
      * @param Score score hold the int variable which include the users overall score for selected mood
      */
 
@@ -466,63 +466,41 @@ public class FeelingQ extends AppCompatActivity {
 
         if (Score >= 0 & Score <= 12 ) {
 
-            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nChances are very less that you feeling " + Mood);
+            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore
+                    + "/12"+ "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore
+                    + "/12"+"\n\nTotal you score: " + userScore + "/48 \nChances are very less that you feeling " + Mood);
 
         }
 
         if (Score >= 10 & Score <= 24 ) {
 
-            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nChances are less that you feeling " + Mood );
+            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"
+                    + "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"
+                    +"\n\nTotal you score: " + userScore + "/48 \nChances are less that you feeling " + Mood );
 
         }
 
         if (Score >= 20 & Score <=36) {
 
-            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nChances are higher that you are feeling " + Mood);
+            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"
+                    + "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"
+                    +"\n\nTotal you score: " + userScore + "/48 \nChances are higher that you are feeling " + Mood);
 
         }
 
         if (Score >= 30 & Score <=48) {
 
-            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \nChances are very higher that you are feeling " + Mood);
+            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"
+                    + "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"
+                    +"\n\nTotal you score: " + userScore + "/48 \nChances are very higher that you are feeling " + Mood);
 
         }
 
     }
 
-
-//    public void sadResult(int Score) {
-//
-//        finalBoxoutput = findViewById(R.id.finalbox);
-//
-//
-//        if (Score >= 0 & Score <= 12 ) {
-//
-//            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \n Chances are very less that you feeling " + Mood);
-//
-//        }
-//
-//        if (Score >= 10 & Score <= 24 ) {
-//
-//            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \n Chances are less that you feeling " + Mood );
-//
-//        }
-//
-//        if (Score >= 20 & Score <=36) {
-//
-//            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \n Chances are higher that you are feeling " + Mood);
-//
-//        }
-//
-//        if (Score >= 30 & Score <=48) {
-//
-//            finalBoxoutput.setText("\n\n\nAnger Score: "+angerScore+ "/12" + "\n\nStress Score: "+stressScore+ "/12"+ "\n\nDepression Score: "+depressionScore+ "/12"+"\n\nAnxiety Score: " + anxietyScore + "/12"+"\n\nTotal you score: " + userScore + "/48 \n Chances are very higher that you are feeling " + Mood);
-//
-//        }
-//
-//    }
-
-
+    /*
+     This method is uncheck all the options to uncheck state
+     */
     public void uncheckallbox(){
 
 
@@ -554,7 +532,9 @@ public class FeelingQ extends AppCompatActivity {
 
     }
 
-
+    /*
+     This method is used to hide the view box when user click on given feeling button options
+     */
     void visibilityforSelectFeeling(){
 
         feelingQbox = findViewById(R.id.feelingQbox);
@@ -577,6 +557,9 @@ public class FeelingQ extends AppCompatActivity {
         anxiousBtn.setVisibility(View.INVISIBLE);
     }
 
+    /*
+     This method is used to calculate score for different options
+     */
     private void scoreForall() {
 
         if (countQnum <=5){
@@ -606,43 +589,85 @@ public class FeelingQ extends AppCompatActivity {
     }
 
     /*
-       Sending the value to Note layout
+       This method is use to send the string variable to Note layout
      */
     public  static String getmood() {
         return moodforNpage;
     }
 
     /*
-        Sending the value to ViewReport layout
+       This method is use to send the string variable to ViewReport layout
      */
     public  static String getdate() {
 
         return scoreDate;
     }
+
+    /*
+      This method is use to send the string variable to ViewReport layout
+    */
     public  static String getangerscore() {
+
         return String.valueOf(angerScore);
     }
+
+    /*
+      This method is use to send the string variable to ViewReport layout
+    */
     public  static String getstressscore() {
 
         return String.valueOf(stressScore);
     }
+
+    /*
+      This method is use to send the string variable to ViewReport layout
+    */
     public  static String getdepressionscore() {
 
         return String.valueOf(depressionScore);
     }
+
+    /*
+      This method is use to send the string variable to ViewReport layout
+    */
     public  static String getanxietyscore() {
 
         return String.valueOf(anxietyScore);
     }
+
+    /*
+      This method is use to send the string variable to ViewReport layout
+    */
     public  static String getuserscore() {
 
         return String.valueOf(userScoreforViewR);
     }
 
-//    public void setMood(String mood){
-//
-//        Mood = mood;
-//        moodforNpage = mood;
-//    }
+    /*
+      This method set the current mood for Mood and moodforNpage string variables
+    */
+    public void setMood(String mood){
+
+        Mood = mood;
+        moodforNpage = mood;
+    }
+
+    /*
+    This method set the score = 0
+     */
+
+    public void resetScore (){
+
+        userScore = 0;
+        userScoreforViewR =0;
+        userScoreAdd = 0;
+        countQnum = 0;
+        angerScore = 0;
+        stressScore =0;
+        depressionScore = 0;
+        anxietyScore =0;
+
+
+    }
 
 }

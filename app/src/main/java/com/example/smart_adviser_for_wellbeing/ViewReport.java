@@ -41,6 +41,7 @@ public class ViewReport extends AppCompatActivity {
 
         saveScore();
 
+        // this handle the showallscore button activity
         showallscore.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -52,11 +53,11 @@ public class ViewReport extends AppCompatActivity {
         });
 
 
-
+        // this handle the close button activity
         closereportbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-//               saveScore();
+
                 finish();
 
             }
@@ -66,6 +67,10 @@ public class ViewReport extends AppCompatActivity {
 
 
     }
+
+    /*
+    This method is used to save the data in database by calling the insertdata method from DatabaseHelperScore
+     */
 
     public void saveScore(){
 
@@ -82,6 +87,9 @@ public class ViewReport extends AppCompatActivity {
     }
 
 
+    /*
+    This method is used to access the data from database by calling the showData method from DatabaseHelperScore
+    */
     public void showData(){
 
         Cursor data = scoredb.getData();
@@ -103,6 +111,11 @@ public class ViewReport extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method is used to dispaly the content which one requested by showData method
+     * @param tittle tittle hold the string variable which include the name of the title
+     * @param message message hold the String variable which include buffer.tostring data
+     */
     public void showMessage(String tittle, String message){
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
